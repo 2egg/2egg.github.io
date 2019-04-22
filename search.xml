@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[关于Hexo字体表格]]></title>
+    <url>%2F2019%2F04%2F22%2F%E5%AD%97%E4%BD%93%E8%A1%A8%E6%A0%BC%2F</url>
+    <content type="text"><![CDATA[1，字体介绍这是斜体 或 这也是斜体这是粗体这是加粗斜体这是删除线 2，分级标题一级标题二级标题三级标题四级标题五级标题六级标题3，超链接写法： 行内形式：我的博客参考形式：[我的博客][1]，有一个很好的平台-[简书][2][1]:https://xfbxfbxfb.github.io/[2]:http://www.jianshu.com/ 4,列表无序列表：写法： 无序列表项1 无序列表项2 无序列表项3 有序列表：并不是真的自动排序写法： 1.1有序列表项1 3.3有序列表项4 2.2有序列表项3 6，表格 表头1 表头2 表头3 表头4 默认左对齐 左对齐 居中对其 右对齐 默认左对齐 左对齐 居中对其 右对齐 默认左对齐 左对齐 居中对其 右对齐]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo 代码范例]]></title>
+    <url>%2F2019%2F04%2F19%2FHexo%E4%BB%A3%E7%A0%81%E8%8C%83%E4%BE%8B%2F</url>
+    <content type="text"><![CDATA[引用块在文章中插入引言，可包含作者、来源和标题。content 作者,来源原链接标题 没有提供参数，则只输出普通的 blockquoteLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem. 引用书上的句子Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. David LevithanWide Awake 引用 TwitterNEW: DevDocs now comes with syntax highlighting. http://devdocs.io @DevDocstwitter.com/devdocs/status/356095192085962752 引用网络上的文章Every interaction is both precious and an opportunity to delight. Seth GodinWelcome to Island Marketing 代码块普通代码块12alert(&apos;Hello World!&apos;);alert(&apos;Hello World!&apos;);指定语言1[rectangle setX: 10 y: 10 width: 20 height: 20];附加说明Array.map1array.map(callback[, thisArg])附加说明和网址_.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3]另一种表现形式说明Underscore.js1alert('Hello World!') 在文章中插入获取的引用content 引用图添加一个内嵌页面iframe 在文章中插入指定大小的图片。插入图 文字链接 为何半夜母猪如此惨叫 段落 content]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F04%2F19%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
