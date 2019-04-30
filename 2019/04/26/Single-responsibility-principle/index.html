@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    Hexo font table |
+    Single responsibility principle |
     
     LeungJay</title>
   
@@ -27,7 +27,7 @@
 <body>
 <main class="content">
   <section class="outer">
-  <article id="h-Hexo font table" class="article article-type-h" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="w-Single-responsibility-principle" class="article article-type-w" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
@@ -35,7 +35,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo font table
+      Single responsibility principle
     </h1>
   
 
@@ -44,8 +44,8 @@
 
     
       <div class="article-meta">
-        <a href="/2019/04/22/Hexo font table/" class="article-date">
-  <time datetime="2019-04-22T01:23:55.000Z" itemprop="datePublished">2019-04-22</time>
+        <a href="/2019/04/26/Single-responsibility-principle/" class="article-date">
+  <time datetime="2019-04-26T09:09:50.000Z" itemprop="datePublished">2019-04-26</time>
 </a>
         
       </div>
@@ -57,55 +57,24 @@
       
 
       
-        <h3 id="1，字体介绍"><a href="#1，字体介绍" class="headerlink" title="1，字体介绍"></a>1，字体介绍</h3><p><em>这是斜体</em> 或 <em>这也是斜体</em><br><strong>这是粗体</strong><br><strong><em>这是加粗斜体</em></strong><br><del>这是删除线</del><br><a id="more"></a></p>
-<h2 id="2，分级标题"><a href="#2，分级标题" class="headerlink" title="2，分级标题"></a>2，分级标题</h2><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="3，超链接"><a href="#3，超链接" class="headerlink" title="3，超链接"></a>3，超链接</h2><p>写法：</p>
-<p>行内形式：<a href="https://2egg.github.io/" target="_blank" rel="noopener">我的博客</a><br>参考形式：[我的博客][1]，有一个很好的平台-[简书][2]<br>[1]:<a href="https://xfbxfbxfb.github.io/" target="_blank" rel="noopener">https://xfbxfbxfb.github.io/</a><br>[2]:<a href="http://www.jianshu.com/" target="_blank" rel="noopener">http://www.jianshu.com/</a></p>
-<h2 id="4-列表"><a href="#4-列表" class="headerlink" title="4,列表"></a>4,列表</h2><p>无序列表：<br>写法：</p>
-<ul>
-<li>无序列表项1</li>
-</ul>
-<ul>
-<li>无序列表项2</li>
-</ul>
-<ul>
-<li>无序列表项3</li>
-</ul>
-<p>有序列表：并不是真的自动排序<br>写法：<br>    1.1有序列表项1<br>    3.3有序列表项4<br>    2.2有序列表项3</p>
-<h2 id="6，表格"><a href="#6，表格" class="headerlink" title="6，表格"></a>6，表格</h2><table>
-<thead>
-<tr>
-<th>表头1</th>
-<th style="text-align:left">表头2</th>
-<th style="text-align:center">表头3</th>
-<th style="text-align:right">表头4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>默认左对齐</td>
-<td style="text-align:left">左对齐</td>
-<td style="text-align:center">居中对其</td>
-<td style="text-align:right">右对齐</td>
-</tr>
-<tr>
-<td>默认左对齐</td>
-<td style="text-align:left">左对齐</td>
-<td style="text-align:center">居中对其</td>
-<td style="text-align:right">右对齐</td>
-</tr>
-<tr>
-<td>默认左对齐</td>
-<td style="text-align:left">左对齐</td>
-<td style="text-align:center">居中对其</td>
-<td style="text-align:right">右对齐</td>
-</tr>
-</tbody>
-</table>
+        <h2 id="单一职责原则-——-SRP"><a href="#单一职责原则-——-SRP" class="headerlink" title="单一职责原则 —— SRP"></a>单一职责原则 —— SRP</h2><blockquote><p>一个类应该只有一个发生变化的原因</p>
+<footer><strong>Robert C. Martin</strong><cite>敏捷软件开发：原则、模式和实践</cite></footer></blockquote>
+<p>&emsp;&emsp;所谓职责是指类变化的原因。如果一个类有多于一个的动机被改变，那么这个类就具有多于一个的职责。而单一职责原则就是指一个类或者模块应该有且只有一个改变的原因。(看看就行)</p>
+<p>&emsp;&emsp;<strong>如果一个类承担的职责过多，就等于把这些职责耦合在一起了。一个职责的变化可能会削弱或者抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当发生变化时，设计会遭受到意想不到的破坏。而如果想要避免这种现象的发生，就要尽可能的遵守单一职责原则。此原则的核心就是解耦和增强内聚性</strong>。</p>
+<p>&emsp;&emsp;内聚标志一个模块内各个元素彼此结合的紧密程度，它是信息隐蔽和局部化概念的自然扩展。内聚是从功能角度来度量模块内的联系，一个好的内聚模块应当恰好做一件事。它描述的是模块内的功能联系。耦合是软件结构中各模块之间相互连接的一种度量，耦合强弱取决于模块间接口的复杂程度、进入或访问一个模块的点以及通过接口的数据。（T负责两个不同的职责：职责P1，职责P2。当由于职责P1需求发生改变而需要修改类T时，有可能会导致原本运行正常的职责P2功能发生故障。也就是说职责P1和P2被耦合在了一起。）</p>
+<p>&emsp;&emsp;<strong>程序讲究的是低耦合，高内聚。就是同一个模块内的各个元素之间要高度紧密，但是各个模块之间的相互依存度却要不那么紧密。</strong>内聚和耦合是密切相关的，同其他模块存在高耦合的模块意味着低内聚，而高内聚的模块意味着该模块同其他模块之间是低耦合。在进行软件设计时，应力争做到高内聚，低耦合。</p>
+<h3 id="实现单一职责原则的好处"><a href="#实现单一职责原则的好处" class="headerlink" title="实现单一职责原则的好处"></a>实现单一职责原则的好处</h3><ol>
+<li>降低类的复杂度；</li>
+<li>提高类的可读性，提高系统的可维护性；</li>
+<li>降低变更引起的风险（降低对其他功能的影响）<h3 id="实现单一职责原则的注意点"><a href="#实现单一职责原则的注意点" class="headerlink" title="实现单一职责原则的注意点"></a>实现单一职责原则的注意点</h3></li>
+<li>单一职责原则最难划分的是职责。</li>
+<li>单一职责原则提出标准：用职责和变化原因来</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/22/Hexo font table/" data-id="cjuxuzadd0001j0su0szwye3c" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/26/Single-responsibility-principle/" data-id="cjuxuzadn0006j0su5d6wt7o7" class="article-share-link">分享</a>
       
     </footer>
 
@@ -116,19 +85,10 @@
     
   <nav class="article-nav">
     
-      <a href="/2019/04/23/Twenty-three-design-patterns-of-Java/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            Design Patterns of Java
-          
-        </div>
-      </a>
     
-    
-      <a href="/2019/04/19/Hexo Code specification/" class="article-nav-link">
+      <a href="/2019/04/24/Open-Close-Principle/" class="article-nav-link">
         <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">Hexo Code specification</div>
+        <div class="article-nav-title">Open Close Principle</div>
       </a>
     
   </nav>
