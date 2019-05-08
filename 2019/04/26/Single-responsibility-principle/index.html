@@ -65,15 +65,18 @@
 <h3 id="实现单一职责原则的好处"><a href="#实现单一职责原则的好处" class="headerlink" title="实现单一职责原则的好处"></a>实现单一职责原则的好处</h3><ol>
 <li>降低类的复杂度；</li>
 <li>提高类的可读性，提高系统的可维护性；</li>
-<li>降低变更引起的风险（降低对其他功能的影响）<h3 id="实现单一职责原则的注意点"><a href="#实现单一职责原则的注意点" class="headerlink" title="实现单一职责原则的注意点"></a>实现单一职责原则的注意点</h3></li>
+<li>降低变更引起的风险（降低对其他功能的影响）;</li>
+</ol>
+<h3 id="实现单一职责原则的注意点"><a href="#实现单一职责原则的注意点" class="headerlink" title="实现单一职责原则的注意点"></a>实现单一职责原则的注意点</h3><ol>
 <li>单一职责原则最难划分的是职责。</li>
 <li>单一职责原则提出标准：用职责和变化原因来</li>
 </ol>
+<h3 id="错误Demo"><a href="#错误Demo" class="headerlink" title="错误Demo"></a>错误Demo</h3><p>&emsp;&emsp;假设机器有四个步骤分别为：<strong>通电，启动，停止，断电</strong>；我们正确的方式应该是每个步骤写一个方法，最后写一个方法的集合，内容：什么时候调用通电 什么时候启动，什么时候停止，什么时候断电，而不是直接将四个步骤集合在一起，如果四个方法集合在一起的话，首先的问题是<strong>职责太多</strong>，不用解释，其次如果有一天我们只需要启动这个机器 不需要别的步骤 还需要再次寻找方法集合中的启动有哪些 复制出来之后<strong>冗余太多</strong>，最后的问题是我们自己都<strong>看不懂</strong>自己当初怎么写的了 内容太多，逻辑加控制，假设现在新增加一个需求，机器在通电之后3分钟之内没有启动的话自动执行断电，到这个时候我们就会很麻烦 首先步骤需要重新调试，其次控制也需要增加逻辑等等一系列问题…..</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/26/Single-responsibility-principle/" data-id="cjuxuzadn0006j0su5d6wt7o7" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/26/Single-responsibility-principle/" data-id="cjvakzk9t00065ksuz3l8p1mm" class="article-share-link">分享</a>
       
     </footer>
 
@@ -83,6 +86,15 @@
   
     
   <nav class="article-nav">
+    
+      <a href="/2019/05/05/Liskov-Substitution-Principle/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            Liskov Substitution Principle
+          
+        </div>
+      </a>
     
     
       <a href="/2019/04/24/Open-Close-Principle/" class="article-nav-link">

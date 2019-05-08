@@ -60,6 +60,67 @@
 
     
       
+        <article id="post-Liskov-Substitution-Principle" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/05/05/Liskov-Substitution-Principle/">Liskov Substitution Principle</a>
+    </h2>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/05/05/Liskov-Substitution-Principle/" class="article-date">
+  <time datetime="2019-05-05T06:54:37.000Z" itemprop="datePublished">2019-05-05</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <h2 id="里氏代换原则-——-LSP"><a href="#里氏代换原则-——-LSP" class="headerlink" title="里氏代换原则 —— LSP"></a>里氏代换原则 —— LSP</h2><blockquote><p>任何基类可以出现的地方，子类一定可以出现！</p>
+</blockquote>
+<p>&emsp;&emsp;LSP 一个软件如果使用的是一个父类的话， 那么一定适用于其子类， 而察觉不出父类对象和子类对象的区别。 也即是说，在软件里面，<strong> 把父类替换成它的子类， 程序的行为不会有变化</strong>， 简单地说， 子类型必须能够替换掉它们的父类型。 举个例子：<strong>企鹅和鸟的关系，企鹅在生物学上属于鸟类，但在面对对象设计中 企鹅并不能以父类(鸟)的身份出现 ，因为企鹅并不具备鸟飞行的行为！</strong> 如果有两个具体的类：A,B 之间的关系违反了LSP的设计，那么根据具体的情况可以在下面的两种重构方案中选择：</p>
+<ul>
+<li><figure class="highlight java"><figcaption><span>创建一个新的超类C（抽象类），将A,B的共同行为转移到C中来解决问题。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dad</span> </span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 家传菜() &#123;</span><br><span class="line">		System.out.println(<span class="string">"红烧排骨"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Dad</span> </span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 家传菜()&#123;</span><br><span class="line">		<span class="keyword">super</span>.家传菜();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">Son s = <span class="keyword">new</span> Son();</span><br><span class="line">s.家传菜();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"A Data"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">C</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">B b = <span class="keyword">new</span> B();</span><br><span class="line">b.print();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"A Data"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>以下方式经常被实际运用</strong></p>
+<figure class="highlight java"><figcaption><span>从B到A的继承关系改为委派关系。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">原本继承关系(Inheritance)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"A Data"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">B b = <span class="keyword">new</span> B();</span><br><span class="line">b.print();</span><br><span class="line"></span><br><span class="line">变成委派关系(Delegation)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"The Delegate"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">	A a = <span class="keyword">new</span> A();</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		a.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">B b = <span class="keyword">new</span> B();</span><br><span class="line">b.print();</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/05/Liskov-Substitution-Principle/" data-id="cjvakzk9p00045ksuh5as3rny" class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+  
+
+  
+  
+  
+  
+
+
+</article>
+
+  
+
+      
         <article id="w-Single-responsibility-principle" class="article article-type-w" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -100,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/26/Single-responsibility-principle/" data-id="cjuxuzadn0006j0su5d6wt7o7" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/26/Single-responsibility-principle/" data-id="cjvakzk9t00065ksuz3l8p1mm" class="article-share-link">分享</a>
       
     </footer>
 
@@ -157,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/24/Open-Close-Principle/" data-id="cjuxuzadk0004j0su908yp8wq" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/24/Open-Close-Principle/" data-id="cjvakzk9r00055ksus3vr4kvx" class="article-share-link">分享</a>
       
     </footer>
 
@@ -213,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/23/Twenty-three-design-patterns-of-Java/" data-id="cjuxuzadm0005j0sujv0zwd49" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/23/Twenty-three-design-patterns-of-Java/" data-id="cjvakzk9v00085ksuaib7do3t" class="article-share-link">分享</a>
       
     </footer>
 
@@ -268,7 +329,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/22/Hexo font table/" data-id="cjuxuzadd0001j0su0szwye3c" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/22/Hexo font table/" data-id="cjvakzk9n00025ksuddvdcqlg" class="article-share-link">分享</a>
       
     </footer>
 
@@ -318,7 +379,7 @@
     <div class="article-gallery-photos">
       
         
-          <a class="article-gallery-img" href="/2019/04/19/Hexo Code specification/" rel="gallery_cjuxuzadi0003j0sucjf17kdk">
+          <a class="article-gallery-img" href="/2019/04/19/Hexo Code specification/" rel="gallery_cjvakzk9i00005ksur07dg9ue">
             <img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-759547.png" itemprop="image">
           </a>
         
@@ -336,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/Hexo Code specification/" data-id="cjuxuzadi0003j0sucjf17kdk" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/19/Hexo Code specification/" data-id="cjvakzk9i00005ksur07dg9ue" class="article-share-link">分享</a>
       
     </footer>
 
@@ -392,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/hello-world/" data-id="cjuxuzadp0007j0sux788h9j0" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/19/hello-world/" data-id="cjvakzk9u00075ksul0516kf2" class="article-share-link">分享</a>
       
     </footer>
 
