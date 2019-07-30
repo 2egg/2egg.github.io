@@ -1991,6 +1991,9 @@ pre .javascript .function {
   content: '\f1a9';
 }
 .navbar:nth-child(4) .nav-item-link::before {
+  content: '\f12f';
+}
+.navbar:nth-child(4) .nav-item-link::before {
   content: '\f115';
 }
 .navbar:nth-child(5) .nav-item-link::before {
