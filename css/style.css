@@ -1990,16 +1990,13 @@ pre .javascript .function {
 .navbar .nav.nav-main .nav-item:nth-child(3) .nav-item-link::before {
   content: '\f1a9';
 }
-.navbar:nth-child(4) .nav-item-link::before {
-  content: '\f12f';
+.navbar .nav.nav-main .nav-item:nth-child(4) .nav-item-link::before {
+  content: '\f18c';
 }
-.navbar:nth-child(4) .nav-item-link::before {
-  content: '\f115';
+.navbar .nav.nav-main .nav-item:nth-child(5) .nav-item-link::before {
+  content: '\f153';
 }
-.navbar:nth-child(5) .nav-item-link::before {
-  content: '\f198';
-}
-.navbar:nth-child(6) .nav-item-link::before {
+.navbar .nav.nav-main .nav-item:nth-child(6) .nav-item-link::before {
   content: '\f174';
 }
 .navbar-bottom {

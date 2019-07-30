@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-15T05:11:51.982Z</updated>
+  <updated>2019-07-30T08:54:11.551Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Baidu Link Submission </title>
+    <link href="http://yoursite.com/2019/07/30/Baidu-Link-Submission/"/>
+    <id>http://yoursite.com/2019/07/30/Baidu-Link-Submission/</id>
+    <published>2019-07-30T08:54:11.000Z</published>
+    <updated>2019-07-30T08:54:11.551Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Liskov Substitution Principle</title>
