@@ -11,6 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
+    负载均衡 |
     
     LeungJay</title>
   
@@ -25,51 +26,17 @@
 </html>
 <body>
 <main class="content">
-  <section class="jumbotron">
-  <div class="video">
-    
-      <div class="video-frame">
-        <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
-      </div>
-    
-    <div class="video-media">
-      <video playsinline autoplay loop muted data-autoplay poster="/images/ocean/ocean.png" x5-video-player-type="h5">
-       <source src="/images/ocean/ocean.mp4" type="video/mp4">
-        <source src="/images/ocean/ocean.ogv" type="video/ogg">
-        <source src="/images/ocean/ocean.webm" type="video/webm">
-        <p>Your user agent does not support the HTML5 Video element.</p>
-      </video>
-      <div class="video-overlay"></div>
-    </div>
-    <div class="video-inner text-center text-white">
-      <h1><a href="/">LeungJay</a></h1>
-      <p>韩良杰的博客</p>
-      <div><img src="/images/hexo-inverted.svg" class="brand" alt="LeungJay"></div>
-    </div>
-    <div class="video-learn-more">
-      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
-    </div>
-  </div>
-</section>
-
-<div id="landingpage">
   <section class="outer">
-  <article class="articles">
-    
-    <h1 class="page-type-title"></h1>
-
-    
-      
-        <article id="post-负载均衡" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="post-负载均衡" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/09/23/负载均衡/">负载均衡</a>
-    </h2>
+    <h1 class="article-title" itemprop="name">
+      负载均衡
+    </h1>
   
 
       </header>
@@ -120,7 +87,39 @@
   
 
   
+    
+  <nav class="article-nav">
+    
+    
+      <a href="/2019/05/05/Liskov-Substitution-Principle/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">Liskov Substitution Principle</div>
+      </a>
+    
+  </nav>
+
+
   
+  
+  
+     
+  <div id="gitalk-container"></div> 
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: '1a6e51c85546cc666cfc',  // 这里一定要注意主题 config.yml 中 clientID 的大小写，否则参数传不过来，对应下边的 "问题一"
+        clientSecret: '35d781edab3771323e555016516c89177b0d25b3',
+        repo: 'blogCommentWarehouse',
+        owner: '2egg',
+        admin: ['2egg'],
+        id: location.pathname,      // 保持默认，官方注释（Ensure uniqueness and length less than 50），文章 URL 不能太长 "问题二"
+        distractionFreeMode: false  // 不喜欢评论时候的遮盖层所以选择 false ，而且我觉得这个也没有必要放在 config.yml 中配置
+      })
+
+  gitalk.render('gitalk-container')
+  </script>
+
   
   
 
@@ -129,420 +128,7 @@
 
   
 
-      
-        <article id="post-Liskov-Substitution-Principle" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/05/05/Liskov-Substitution-Principle/">Liskov Substitution Principle</a>
-    </h2>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/05/05/Liskov-Substitution-Principle/" class="article-date">
-  <time datetime="2019-05-05T06:54:37.000Z" itemprop="datePublished">2019-05-05</time>
-</a>
-        
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-
-      
-        <h2 id="里氏代换原则-——-LSP"><a href="#里氏代换原则-——-LSP" class="headerlink" title="里氏代换原则 —— LSP"></a>里氏代换原则 —— LSP</h2><blockquote><p>任何基类可以出现的地方，子类一定可以出现！</p>
-</blockquote>
-<p>&emsp;&emsp;里氏替换原则，OCP作为OO的高层原则，主张使用“抽象(Abstraction)”和“多态(Polymorphism)”将<strong>设计中的静态结构改为动态结构，维持设计的封闭性</strong>。“抽象”是语言提供的功能。“多态”由继承语义实现。<br></p>
-        
-          <a class="article-more-link" href="/2019/05/05/Liskov-Substitution-Principle/">阅读全文...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/05/Liskov-Substitution-Principle/" data-id="ck10k448z0005v0sucmu0hrrg" class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-  
-
-  
-  
-  
-  
-
-
-</article>
-
-  
-
-      
-        <article id="w-Single-responsibility-principle" class="article article-type-w" itemscope itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/26/Single-responsibility-principle/">Single responsibility principle</a>
-    </h2>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/04/26/Single-responsibility-principle/" class="article-date">
-  <time datetime="2019-04-26T09:09:50.000Z" itemprop="datePublished">2019-04-26</time>
-</a>
-        
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-
-      
-        <h2 id="单一职责原则-——-SRP"><a href="#单一职责原则-——-SRP" class="headerlink" title="单一职责原则 —— SRP"></a>单一职责原则 —— SRP</h2><blockquote><p>一个类应该只有一个发生变化的原因</p>
-<footer><strong>Robert C. Martin</strong><cite>敏捷软件开发：原则、模式和实践</cite></footer></blockquote>
-<p>&emsp;&emsp;所谓职责是指类变化的原因。如果一个类有多于一个的动机被改变，那么这个类就具有多于一个的职责。而单一职责原则就是指一个类或者模块应该有且只有一个改变的原因。(看看就行)</p>
-<p>&emsp;&emsp;<strong>如果一个类承担的职责过多，就等于把这些职责耦合在一起了。一个职责的变化可能会削弱或者抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当发生变化时，设计会遭受到意想不到的破坏。而如果想要避免这种现象的发生，就要尽可能的遵守单一职责原则。此原则的核心就是解耦和增强内聚性</strong>。<br></p>
-        
-          <a class="article-more-link" href="/2019/04/26/Single-responsibility-principle/">阅读全文...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/26/Single-responsibility-principle/" data-id="ck10k4495000av0suvpkaxtwx" class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-  
-
-  
-  
-  
-  
-
-
-</article>
-
-  
-
-      
-        <article id="post-Open-Close-Principle" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/24/Open-Close-Principle/">Open Close Principle</a>
-    </h2>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/04/24/Open-Close-Principle/" class="article-date">
-  <time datetime="2019-04-24T01:11:30.000Z" itemprop="datePublished">2019-04-24</time>
-</a>
-        
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-
-      
-        <h3 id="开闭原则-——-OCP"><a href="#开闭原则-——-OCP" class="headerlink" title="开闭原则 —— OCP"></a>开闭原则 —— OCP</h3><blockquote><p>Software entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！)</p>
-<footer><strong>Bertrand Meyer</strong><cite>Wide Awake</cite></footer></blockquote>
-<p>模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。<br></p>
-        
-          <a class="article-more-link" href="/2019/04/24/Open-Close-Principle/">阅读全文...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/24/Open-Close-Principle/" data-id="ck10k44940009v0su0t2uqjm8" class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-  
-
-  
-  
-  
-  
-
-
-</article>
-
-  
-
-      
-        <article id="post-Twenty-three-design-patterns-of-Java" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/23/Twenty-three-design-patterns-of-Java/">Design Patterns of Java</a>
-    </h2>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/04/23/Twenty-three-design-patterns-of-Java/" class="article-date">
-  <time datetime="2019-04-23T05:13:18.000Z" itemprop="datePublished">2019-04-23</time>
-</a>
-        
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-
-      
-        <h3 id="What-is-the-design-pattern"><a href="#What-is-the-design-pattern" class="headerlink" title="What is the design pattern?"></a>What is the design pattern?</h3><blockquote><p>设计模式（Design Pattern）是一套被反复使用、多数人知晓的、经过分类的、代码设计经验的总结。<br>使用设计模式的目的：为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。 设计模式使代码编写真正工程化；设计模式是软件工程的基石脉络，如同大厦的结构一样。</p>
-<footer><strong>百度</strong><cite><a href="https://baike.baidu.com/item/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1212549?fr=aladdin" target="_blank" rel="noopener">设计模式概念</a></cite></footer></blockquote>
-        
-          <a class="article-more-link" href="/2019/04/23/Twenty-three-design-patterns-of-Java/">阅读全文...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/23/Twenty-three-design-patterns-of-Java/" data-id="ck10k449b000cv0su7j8601tl" class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-  
-
-  
-  
-  
-  
-
-
-</article>
-
-  
-
-      
-        <article id="h-Hexo font table" class="article article-type-h" itemscope itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/22/Hexo font table/">Hexo font table</a>
-    </h2>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/04/22/Hexo font table/" class="article-date">
-  <time datetime="2019-04-22T01:23:55.000Z" itemprop="datePublished">2019-04-22</time>
-</a>
-        
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-
-      
-        <h3 id="1，字体介绍"><a href="#1，字体介绍" class="headerlink" title="1，字体介绍"></a>1，字体介绍</h3><p><em>这是斜体</em> 或 <em>这也是斜体</em><br><strong>这是粗体</strong><br><strong><em>这是加粗斜体</em></strong><br><del>这是删除线</del><br></p>
-        
-          <a class="article-more-link" href="/2019/04/22/Hexo font table/">阅读全文...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/22/Hexo font table/" data-id="ck10k448w0003v0suchuoiqp1" class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-  
-
-  
-  
-  
-  
-
-
-</article>
-
-  
-
-      
-        <article id="w-Hexo Code specification" class="article article-type-w" itemscope itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/19/Hexo Code specification/">Hexo Code specification</a>
-    </h2>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/04/19/Hexo Code specification/" class="article-date">
-  <time datetime="2019-04-19T08:55:08.000Z" itemprop="datePublished">2019-04-19</time>
-</a>
-        
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-  <div class="article-gallery">
-    <div class="article-gallery-photos">
-      
-        
-          <a class="article-gallery-img" href="/2019/04/19/Hexo Code specification/" rel="gallery_ck10k448r0001v0su3r8xtrr9">
-            <img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-759547.png" itemprop="image">
-          </a>
-        
-      
-    </div>
-  </div>
-
-
-      
-        <h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><p>在文章中插入引言，可包含作者、来源和标题。<br><blockquote><p>content</p>
-<footer><strong>作者,来源</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="noopener">原链接标题</a></cite></footer></blockquote><br></p>
-        
-          <a class="article-more-link" href="/2019/04/19/Hexo Code specification/">阅读全文...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/Hexo Code specification/" data-id="ck10k448r0001v0su3r8xtrr9" class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-  
-
-  
-  
-  
-  
-
-
-</article>
-
-  
-
-      
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/19/hello-world/">Hello World</a>
-    </h2>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/04/19/hello-world/" class="article-date">
-  <time datetime="2019-04-19T08:47:54.228Z" itemprop="datePublished">2019-04-19</time>
-</a>
-        
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-link" href="/2019/04/19/hello-world/">阅读全文...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/hello-world/" data-id="ck10k44910007v0surrulesct" class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-  
-
-  
-  
-  
-  
-
-
-</article>
-
-  
-
-      
-  </article>
-  
-  
 </section>
-</div>
-
 
   <footer class="footer">
   
