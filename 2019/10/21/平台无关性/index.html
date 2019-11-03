@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    Hello World |
+    关于Java 是如何实现平台无关性的 |
     
     LeungJay</title>
   
@@ -27,7 +27,7 @@
 <body>
 <main class="content">
   <section class="outer">
-  <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="post-平台无关性" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
@@ -35,7 +35,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      关于Java 是如何实现平台无关性的
     </h1>
   
 
@@ -44,8 +44,8 @@
 
     
       <div class="article-meta">
-        <a href="/2019/04/19/hello-world/" class="article-date">
-  <time datetime="2019-04-19T08:47:54.228Z" itemprop="datePublished">2019-04-19</time>
+        <a href="/2019/10/21/平台无关性/" class="article-date">
+  <time datetime="2019-10-21T06:54:37.000Z" itemprop="datePublished">2019-10-21</time>
 </a>
         
       </div>
@@ -57,21 +57,23 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <p>刚开始接触Java这门语言的时候，导师基本都会问我们为什么会去学习 Java 语言，Java 语言是因为什么可以迅速占领市场，并且被广大用户开发者所接受。原因就是<strong>Java 是一门跨平台的语言</strong>,并且是平台无关性的。</p>
+<h3 id="平台无关性"><a href="#平台无关性" class="headerlink" title="平台无关性"></a>平台无关性</h3><p>平台无关性指的是某种语言可以在计算机上的运行不受平台的约束，一次编译，到处执行。（Write Once,Run Anywhere）大白话就是 根据其语法将代码编译为二级制程序， 就能够不去改变编译后的二进制程序在多个平台运行。</p>
 <a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h4 id="Java平台"><a href="#Java平台" class="headerlink" title="Java平台"></a>Java平台</h4><p>java平台在Java程序运行时，扮演者一个程序与硬件或者操作系统之间的缓冲角色。 java程序被编译为可运行于java虚拟机中的二进制程序，并且假定java API（应用程序接口协议） 的Class 文件在运行时是可用的。然后 虚拟机根据程序的java 代码 编译产生二进制文件，由二进制文件去访问底层计算机。</p>
+<h4 id="Java-class文件"><a href="#Java-class文件" class="headerlink" title="Java class文件"></a>Java class文件</h4><p>Java class 文件可以在任何平台上创建，也可以被任何平台的java 虚拟机装入并且运行。它的格式，包括多字节的高位优存云顶，都有严格定义，并且是与Java 虚拟机所在平台无关。</p>
+<h4 id="可伸缩性"><a href="#可伸缩性" class="headerlink" title="可伸缩性"></a>可伸缩性</h4><p>Java 支持平台无关的原因有一个就是因为它的可伸缩性。Java 平台可以在各种各样的不同类型（从嵌入式设备到大型主机）的计算机实现，java 根据其API的定义方式分为三大类，它们表现着Java平台的不同的伸缩性：</p>
+<ul>
+<li>企业版（J2EE）：java网络编程，主要用来编写一些动态网站。</li>
+<li>标准版（J2SE）：java核心继承，主要用来写C/S架构的程序。</li>
+<li>微型版（J2ME）：java移动开发，主要用来写手机应用</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/hello-world/" data-id="ck10k7d1f000a0osudfs7srxk" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/10/21/平台无关性/" data-id="ck2j1j63t000awohea4uuuduf"
+         class="article-share-link">分享</a>
       
     </footer>
 
@@ -82,15 +84,11 @@
     
   <nav class="article-nav">
     
-      <a href="/2019/04/19/Hexo Code specification/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            Hexo Code specification
-          
-        </div>
-      </a>
     
+      <a href="/2019/09/23/i++和++i 的区别/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">java 运算符</div>
+      </a>
     
   </nav>
 
