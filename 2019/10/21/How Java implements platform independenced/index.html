@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>
-    Design Patterns of Java |
+    How Java implements platform independence |
     
     LeungJay</title>
   
@@ -27,7 +27,7 @@
 <body>
 <main class="content">
   <section class="outer">
-  <article id="post-Twenty-three-design-patterns-of-Java" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+  <article id="post-How Java implements platform independenced" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
@@ -35,7 +35,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Design Patterns of Java
+      How Java implements platform independence
     </h1>
   
 
@@ -44,8 +44,8 @@
 
     
       <div class="article-meta">
-        <a href="/2019/04/23/Twenty-three-design-patterns-of-Java/" class="article-date">
-  <time datetime="2019-04-23T05:13:18.000Z" itemprop="datePublished">2019-04-23</time>
+        <a href="/2019/10/21/How Java implements platform independenced/" class="article-date">
+  <time datetime="2019-10-21T06:54:37.000Z" itemprop="datePublished">2019-10-21</time>
 </a>
         
       </div>
@@ -57,16 +57,22 @@
       
 
       
-        <h3 id="What-is-the-design-pattern"><a href="#What-is-the-design-pattern" class="headerlink" title="What is the design pattern?"></a>What is the design pattern?</h3><blockquote><p>设计模式（Design Pattern）是一套被反复使用、多数人知晓的、经过分类的、代码设计经验的总结。<br>使用设计模式的目的：为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。 设计模式使代码编写真正工程化；设计模式是软件工程的基石脉络，如同大厦的结构一样。</p>
-<footer><strong>百度</strong><cite><a href="https://baike.baidu.com/item/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1212549?fr=aladdin" target="_blank" rel="noopener">设计模式概念</a></cite></footer></blockquote>
+        <p>刚开始接触Java这门语言的时候，导师基本都会问我们为什么会去学习 Java 语言，Java 语言是因为什么可以迅速占领市场，并且被广大用户开发者所接受。原因就是<strong>Java 是一门跨平台的语言</strong>,并且是平台无关性的。</p>
+<h3 id="平台无关性"><a href="#平台无关性" class="headerlink" title="平台无关性"></a>平台无关性</h3><p>平台无关性指的是某种语言可以在计算机上的运行不受平台的约束，一次编译，到处执行。（Write Once,Run Anywhere）大白话就是 根据其语法将代码编译为二级制程序， 就能够不去改变编译后的二进制程序在多个平台运行。</p>
 <a id="more"></a>
-<h3 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h3><blockquote><p>为什么要提倡“Design Pattern呢？根本原因是为了代码复用，增加可维护性。那么怎么才能实现代码复用呢？<br>面向对象有几个原则：<br>    开闭原则（Open Closed Principle，OCP）、<br>    单一职责原则（Single Responsiblity Principle SRP）、<br>    里氏代换原则（Liskov Substitution Principle，LSP）、<br>    依赖倒转原则（Dependency Inversion Principle，DIP）、<br>    接口隔离原则（Interface Segregation Principle，ISP）、<br>    合成/聚合复用原则（Composite/Aggregate Reuse Principle，CARP）、<br>    最小知识原则（Principle of Least Knowledge，PLK，也叫迪米特法则）。<br>    开闭原则具有理想主义的色彩，它是面向对象设计的终极目标。其他几条，则可以看做是开闭原则的实现方法。<br>    设计模式就是实现了这些原则，从而达到了代码复用、增加可维护性的目的</p>
-<footer><strong>百度</strong><cite><a href="https://baike.baidu.com/item/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1212549?fr=aladdin" target="_blank" rel="noopener">设计模式设计原则</a></cite></footer></blockquote>
+<h4 id="Java平台"><a href="#Java平台" class="headerlink" title="Java平台"></a>Java平台</h4><p>java平台在Java程序运行时，扮演者一个程序与硬件或者操作系统之间的缓冲角色。 java程序被编译为可运行于java虚拟机中的二进制程序，并且假定java API（应用程序接口协议） 的Class 文件在运行时是可用的。然后 虚拟机根据程序的java 代码 编译产生二进制文件，由二进制文件去访问底层计算机。</p>
+<h4 id="Java-class文件"><a href="#Java-class文件" class="headerlink" title="Java class文件"></a>Java class文件</h4><p>Java class 文件可以在任何平台上创建，也可以被任何平台的java 虚拟机装入并且运行。它的格式，包括多字节的高位优存云顶，都有严格定义，并且是与Java 虚拟机所在平台无关。</p>
+<h4 id="可伸缩性"><a href="#可伸缩性" class="headerlink" title="可伸缩性"></a>可伸缩性</h4><p>Java 支持平台无关的原因有一个就是因为它的可伸缩性。Java 平台可以在各种各样的不同类型（从嵌入式设备到大型主机）的计算机实现，java 根据其API的定义方式分为三大类，它们表现着Java平台的不同的伸缩性：</p>
+<ul>
+<li>企业版（J2EE）：java网络编程，主要用来编写一些动态网站。</li>
+<li>标准版（J2SE）：java核心继承，主要用来写C/S架构的程序。</li>
+<li>微型版（J2ME）：java移动开发，主要用来写手机应用</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/23/Twenty-three-design-patterns-of-Java/" data-id="ck2j31hul000dvkhebyr4earf"
+      <a data-url="http://yoursite.com/2019/10/21/How Java implements platform independenced/" data-id="ck2j31hu40005vkhe9w1shmtc"
          class="article-share-link">分享</a>
       
     </footer>
@@ -78,19 +84,10 @@
     
   <nav class="article-nav">
     
-      <a href="/2019/04/24/Open-Close-Principle/" class="article-nav-link">
-        <strong class="article-nav-caption">前一篇</strong>
-        <div class="article-nav-title">
-          
-            Open Close Principle
-          
-        </div>
-      </a>
     
-    
-      <a href="/2019/04/22/Hexo font table/" class="article-nav-link">
+      <a href="/2019/09/23/Java Operator/" class="article-nav-link">
         <strong class="article-nav-caption">后一篇</strong>
-        <div class="article-nav-title">Hexo font table</div>
+        <div class="article-nav-title">Java Operator</div>
       </a>
     
   </nav>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  
+    <meta name="keywords" content="韩良杰的博客">
+  
+  
+    <meta name="description" content="韩良杰他很懒，而且不喜欢说话！">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    Java Operator |
+    
+    LeungJay</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  
+  <script src="/js/pace.min.js"></script>
+</head>
+</html>
+<body>
+<main class="content">
+  <section class="outer">
+  <article id="post-Java Operator" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java Operator
+    </h1>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/09/23/Java Operator/" class="article-date">
+  <time datetime="2019-09-23T03:20:35.000Z" itemprop="datePublished">2019-09-23</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <h4 id="Java-运算符"><a href="#Java-运算符" class="headerlink" title="Java 运算符"></a>Java 运算符</h4><h5 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h5><p>运算符是用来计量数据的符号，数据可以是常量也可以是变量，被运算的操作的数据我们称之为操作符，算符运算符最常见的操作就是将操作数参与数学计算。</p>
+<p>算数运算操作数必须是数值类型，</p>
+<p>根据其<strong>运算数数量</strong>又分为一元运算符、二元运算符。</p>
+<p>二元运算符 加减乘除 四则运算  取模则是求两个操作符相除后的余数。</p>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">范例</th>
+<th style="text-align:center">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">一</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">正号</td>
+<td style="text-align:center">+3</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">二</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">加号</td>
+<td style="text-align:center">2+3</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">String</td>
+<td style="text-align:center">+</td>
+<td style="text-align:center">链接字符串</td>
+<td style="text-align:center">“hello”+”world“</td>
+<td style="text-align:center">helloworld</td>
+</tr>
+<tr>
+<td style="text-align:center">一</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">负号</td>
+<td style="text-align:center">int i = 3;  -i</td>
+<td style="text-align:center">-3</td>
+</tr>
+<tr>
+<td style="text-align:center">二</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">减号</td>
+<td style="text-align:center">3-1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">二</td>
+<td style="text-align:center">*</td>
+<td style="text-align:center">乘</td>
+<td style="text-align:center">2*3</td>
+<td style="text-align:center">6</td>
+</tr>
+<tr>
+<td style="text-align:center">二</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">除</td>
+<td style="text-align:center">5/2</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">二</td>
+<td style="text-align:center">%</td>
+<td style="text-align:center">取模(取余数)</td>
+<td style="text-align:center">5/2</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">一</td>
+<td style="text-align:center">++</td>
+<td style="text-align:center">自增</td>
+<td style="text-align:center">int i=0;i++</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">一</td>
+<td style="text-align:center">–</td>
+<td style="text-align:center">自减</td>
+<td style="text-align:center">int i=3；i–</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<p>++ 或 – 可以用于数值(操作数)</p>
+<ul>
+<li><p>之前：在赋值操作中，先对被++或–的操作变量进行+1 或者-1，然后再进行赋值。</p>
+</li>
+<li><p>之后：在赋值操作中，先对被++ 或 – 的操作变量进行赋值，然后再进行自增或自减。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.numerical;  </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Operator</span> </span>&#123;  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </span><br><span class="line">            <span class="keyword">int</span> b,c,d,f,g,h;  </span><br><span class="line">            <span class="keyword">int</span> a = <span class="number">5</span>;  </span><br><span class="line">            b = +a; <span class="comment">//正数</span></span><br><span class="line">            System.out.println(<span class="string">"b="</span>+b+<span class="string">",a="</span>+a);  </span><br><span class="line">            <span class="comment">//b=5,a=5 </span></span><br><span class="line">            c = -a; <span class="comment">//负数</span></span><br><span class="line">            System.out.println(<span class="string">"c="</span>+c+<span class="string">",a="</span>+a);</span><br><span class="line">            <span class="comment">//c=-5,a=5</span></span><br><span class="line">            <span class="keyword">int</span> l = <span class="number">2</span>;  </span><br><span class="line">            d = ++l; <span class="comment">//先+1;再d=l  </span></span><br><span class="line">            System.out.println(<span class="string">"d="</span>+d+<span class="string">",l="</span>+l);</span><br><span class="line">            <span class="comment">//d=3,l=3 </span></span><br><span class="line">            <span class="keyword">int</span> m = <span class="number">3</span>;  </span><br><span class="line">            f = m++;<span class="comment">//先f=m;再m=m+1  </span></span><br><span class="line">            System.out.println(<span class="string">"f="</span>+f+<span class="string">",m="</span>+m);  </span><br><span class="line">            <span class="comment">//f=3,m=4 </span></span><br><span class="line">            <span class="keyword">int</span> n = <span class="number">4</span>;  </span><br><span class="line">            g = --n;<span class="comment">//先n=n-1;再g=n  </span></span><br><span class="line">            System.out.println(<span class="string">"g="</span>+g+<span class="string">",n="</span>+n); </span><br><span class="line">            <span class="comment">//g=3,n=3 </span></span><br><span class="line">            <span class="keyword">int</span> o = <span class="number">6</span>;  </span><br><span class="line">            h = o--;<span class="comment">//先h=o;再o=o-1  </span></span><br><span class="line">            System.out.println(<span class="string">"h="</span>+h+<span class="string">",o="</span>+o);  </span><br><span class="line">            <span class="comment">//h=6,o=5</span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>二元运算时，当两个操作数的数据类型不同，运算结果的数据类型和参与运算的操作数的数据类型中精度较高（或位数较长的）一致。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span> a = <span class="number">3</span>;  </span><br><span class="line"> </span><br><span class="line"> <span class="keyword">double</span> b = <span class="number">3.53</span>;<span class="comment">//或者3.53d  </span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">float</span> c = <span class="number">1.7f</span>;  </span><br><span class="line"></span><br><span class="line"> <span class="keyword">int</span> d = <span class="number">1</span>; </span><br><span class="line"> System.out.println(<span class="string">"int /int :a/d="</span>+a/d); </span><br><span class="line"><span class="comment">// 输出结果： (int /int :a/d=3)</span></span><br><span class="line"> System.out.println(<span class="string">"double/int:b/a="</span>+b/a); </span><br><span class="line"><span class="comment">// 输出结果： (double/int:b/a=1.1766666666666665)</span></span><br><span class="line"> System.out.println(<span class="string">"float/int:c/a="</span>+c/a);</span><br><span class="line"><span class="comment">// 输出结果： (float/int:c/a=0.56666666)</span></span><br></pre></td></tr></table></figure>
+<h6 id="转换原则"><a href="#转换原则" class="headerlink" title="转换原则"></a>转换原则</h6><p>低精度到高精度会自动转换，然而高精度到低精度则要进行强制转换</p>
+<p>低精度——&gt;高精度</p>
+<p>byte、short、int、long、float、double、</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">number</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">double</span> b = <span class="number">5.33</span>;</span><br><span class="line">    b = a;</span><br><span class="line">    a = (<span class="keyword">int</span>)b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="数据长度"><a href="#数据长度" class="headerlink" title="数据长度"></a>数据长度</h6><p>位：一个二进制数据 0 或 1 为1Bit （位）</p>
+<p>字节：存储空间的计量单位、1Byte(字节)= 8 Bit,如数据库中的varchar 为字节</p>
+<ol>
+<li>Boolean类型的取值有：true、false 、 占1Byte</li>
+<li>Char 类型的数据：Unicode 字符、占2Byte</li>
+<li>Byte 一个字节（8位）（-128~127） -2的7次方到2的7次方-1</li>
+<li>short 两个字节（16位）（-32768 ~ 32767） -2的15次方到2的15次方-1</li>
+<li>int 四个字节（32位）（一个字长）（-21474483648 ~ 2147483647）-2的31次方到2的三十一次方减一</li>
+<li>long 8字节 64位 -2的63次方 到 2的63次方减一</li>
+<li>float 四个字节 32位 3.402823e+38 ~1.401298e-45 （e+38 是 数值乘以十的38次方  e-45 的 数值乘以十的负45次方）</li>
+<li>double 八个字节 64位 。。。。。。。</li>
+</ol>
+<h6 id="注意"><a href="#注意" class="headerlink" title="注意"></a><strong>注意</strong></h6><p>数值计算中的语法现象为“<strong>晋升</strong>”、即：byte、short、和char、低于int 的数据类型 进行算数运算后，结果会自动提升为int类型。</p>
+<p>两个char 类型运算时，会自动转换为 int 类型、或char 与其他类型进行运算时，也会自动传为int 类型的，再做其他类型的转换。</p>
+<p>算数运算可以加入小口号“<strong>()</strong>”提高优先级，优先小小括号内的运算，再其他运算符运算。</p>
+<p>算数运算前操作数变量必须赋值，反之，报语法错误。</p>
+<h5 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h5><p>关系运算符用于<strong>比较两个数值之间的大小</strong>，其运算结果为一个 <strong>逻辑类型(boolean布尔类型)的数值。</strong> </p>
+<h5 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h5><p>逻辑运算符要求操作数的数据类型为逻辑型，其运算结果也是逻辑型值。</p>
+<h5 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h5><p>位运算是以二进制位为单位进行的运算，其操作数和运算结果都是整型值。</p>
+<p>位与’&amp;’、位或’|’、位非’~’、位异或’^’、右移’&gt;&gt;’、左移’&lt;&lt;’、0填充的右移’&gt;&gt;&gt;’、</p>
+<p>未完待续。。。。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/23/Java Operator/" data-id="ck2j31hu70007vkhe8j16vote"
+         class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+  
+
+  
+    
+  <nav class="article-nav">
+    
+      <a href="/2019/10/21/How Java implements platform independenced/" class="article-nav-link">
+        <strong class="article-nav-caption">前一篇</strong>
+        <div class="article-nav-title">
+          
+            How Java implements platform independence
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2019/09/23/Load Balancing/" class="article-nav-link">
+        <strong class="article-nav-caption">后一篇</strong>
+        <div class="article-nav-title">Load Balancing</div>
+      </a>
+    
+  </nav>
+
+
+  
+  
+  
+     
+  <div id="gitalk-container"></div> 
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: '1a6e51c85546cc666cfc',  // 这里一定要注意主题 config.yml 中 clientID 的大小写，否则参数传不过来，对应下边的 "问题一"
+        clientSecret: '35d781edab3771323e555016516c89177b0d25b3',
+        repo: 'blogCommentWarehouse',
+        owner: '2egg',
+        admin: ['2egg'],
+        id: location.pathname,      // 保持默认，官方注释（Ensure uniqueness and length less than 50），文章 URL 不能太长 "问题二"
+        distractionFreeMode: false  // 不喜欢评论时候的遮盖层所以选择 false ，而且我觉得这个也没有必要放在 config.yml 中配置
+      })
+
+  gitalk.render('gitalk-container')
+  </script>
+
+  
+  
+
+
+</article>
+
+  
+
+</section>
+
+  <footer class="footer">
+  
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+    <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>&copy; 2019 LeungJay</li>
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+  </div>
+</footer>
+
+</main>
+<aside class="sidebar">
+  <button class="navbar-toggle"></button>
+
+<nav class="navbar">
+  
+    <div class="logo">
+      <a href="/"><img src="/images/hexo.svg" alt="LeungJay"></a>
+    </div>
+  
+  <ul class="nav nav-main">
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/">首页</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/archives">文档</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/gallery">相册</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/tags">标签云</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/categories">分类</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-item-link" href="/about">关于</a>
+      </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        搜索
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+      <li class="nav-item">
+          <div class="totop" id="totop">
+    <i class="fe fe-rocket"></i>
+</div>
+      </li>
+    <li class="nav-item">
+      
+        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+          <i class="fe fe-feed"></i>
+        </a>
+      
+    </li>
+  </ul>
+</nav>
+
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+</aside>
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+  <script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+  <script src="/js/search.js"></script>
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+</html>
