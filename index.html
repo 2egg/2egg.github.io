@@ -60,7 +60,7 @@
 
     
       
-        <article id="post-负载均衡" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+        <article id="post-Baidu-Link-Submission" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
@@ -68,7 +68,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/09/23/负载均衡/">负载均衡</a>
+      <a class="article-title" href="/2019/07/30/Baidu-Link-Submission/">百度快照提交</a>
     </h2>
   
 
@@ -77,8 +77,8 @@
 
     
       <div class="article-meta">
-        <a href="/2019/09/23/负载均衡/" class="article-date">
-  <time datetime="2019-09-23T03:20:35.000Z" itemprop="datePublished">2019-09-23</time>
+        <a href="/2019/07/30/Baidu-Link-Submission/" class="article-date">
+  <time datetime="2019-07-30T08:54:11.000Z" itemprop="datePublished">2019-07-30</time>
 </a>
         
       </div>
@@ -90,29 +90,93 @@
       
 
       
-        <h2 id="什么是负载均衡？"><a href="#什么是负载均衡？" class="headerlink" title="什么是负载均衡？"></a>什么是负载均衡？</h2><h5 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h5><p>​    多台服务器组成一台服务器集合，每台服务器都具有等价的地位， 可以单独提供服务且无需其他服务器的辅助，通过某种负载分担技术，将外部发送来的请求 均衡的分配到服务器集合中的每一台服务器上，而接受到请求的服务器独立的回应客户请求。 </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/30/Baidu-Link-Submission/" data-id="ckodqstys0001fcsujuwq967u" class="article-share-link">分享</a>
+      
+    </footer>
+
+  </div>
+  
+
+  
+  
+  
+  
+
+
+</article>
+
+  
+
+      
+        <article id="post-负载均衡" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h2 itemprop="name">
+      <a class="article-title" href="/2019/06/23/负载均衡/">负载均衡</a>
+    </h2>
+  
+
+      </header>
+    
+
+    
+      <div class="article-meta">
+        <a href="/2019/06/23/负载均衡/" class="article-date">
+  <time datetime="2019-06-23T03:20:35.000Z" itemprop="datePublished">2019-06-23</time>
+</a>
+        
+      </div>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+      
+
+      
+        <h5 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h5><p>​    多台服务器组成一台服务器集合，每台服务器都具有等价的地位， 可以单独提供服务且无需其他服务器的辅助，通过某种负载分担技术，将外部发送来的请求 均衡的分配到服务器集合中的每一台服务器上，而接受到请求的服务器独立的回应客户请求。 </p>
 <p>​    负载均衡是高可用网络基础架构的一个关键组成部分， 有了负载均衡，我们通常可以将我们的应用服务器部署多个，然后通过负载均衡将用户的请求发送到不同的服务器来提高网站，应用，数据库或者其他服务的性能以及可靠性。</p>
 <p>​    正常情况下多个用户通过网络 访问单个服务器，数据库处理数据，如果出现服务器宕机的情况的话，在只有一个服务器的下，用户的请求就会得不到回应（单点故障问题），又或者N个用户在段时间内访问同一服务器，超过了服务器的处理能力，会产生响应速度慢 甚至无法连接到服务器的情况。</p>
 <h5 id="负载均衡方案"><a href="#负载均衡方案" class="headerlink" title="负载均衡方案"></a>负载均衡方案</h5><p>​    通过一个负载均衡器、至少两个web服务器、由 均衡器根据业务逻辑（比如：某个服务器通过运行状态检查服务检查此服务器已经宕机，将不分配用户请求给此服务器，直至检查服务器状态为”健康”在将用户请求发送给此服务器。）分配用户请求转发至某个服务器。</p>
 <h5 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ip列表</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ipMap</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> HashMap&lt;String, Integer&gt; serverWeightMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">        <span class="keyword">static</span> &#123;</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.100"</span>, <span class="number">1</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.101"</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 权重为4</span></span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.102"</span>, <span class="number">4</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.103"</span>, <span class="number">1</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.104"</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 权重为3</span></span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.105"</span>, <span class="number">3</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.106"</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 权重为2</span></span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.107"</span>, <span class="number">2</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.108"</span>, <span class="number">1</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.109"</span>, <span class="number">1</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.110"</span>, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="随机"><a href="#随机" class="headerlink" title="随机"></a>随机</h6><p>向集合中添加负载地址 加权 添加单个负载地址个数  随机负载个数，循环转发请求到服务器上，次数足够多的的情况下，每个负载地址根据权重所接受的请求次数 与集合长度是成比例的。</p>
 <ul>
-<li>随机：向集合中添加负载地址 加权 添加单个负载地址个数  随机负载个数，循环转发请求到服务器上，次数足够多的的情况下，每个负载地址根据权重所接受的请求次数 与集合长度是成比例的。</li>
+<li>优点：使用简单</li>
+<li>缺点：不适合机器配置不同的场景</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">random</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 重建一个Map，避免服务器的上下线导致的并发问题</span></span><br><span class="line">       Map&lt;String, Integer&gt; serverMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">       serverMap.putAll(ipMap.serverWeightMap);</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 取得Ip地址List</span></span><br><span class="line">       Set&lt;String&gt; keySet = serverMap.keySet();</span><br><span class="line">       Iterator&lt;String&gt; iterator = keySet.iterator();</span><br><span class="line"></span><br><span class="line">       List&lt;String&gt; serverList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">       <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">           String server = iterator.next();</span><br><span class="line">           <span class="keyword">int</span> weight = serverMap.get(server);</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; weight; i++)</span><br><span class="line">               serverList.add(server);</span><br><span class="line">       &#125;</span><br><span class="line">       java.util.Random random = <span class="keyword">new</span> java.util.Random();</span><br><span class="line">       <span class="keyword">int</span> randomPos = random.nextInt(serverList.size());</span><br><span class="line">       <span class="keyword">return</span> serverList.get(randomPos);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h6><p>为第一个请求选择健康池中的第一个后端服务器，然后按顺序往后依次选择，直到最后一个，然后循环。</p>
 <ul>
-<li>轮询：为第一个请求选择健康池中的第一个后端服务器，然后按顺序往后依次选择，直到最后一个，然后循环。</li>
+<li>优点：服务器请求数目相同</li>
+<li>缺点：服务器压力不一致，不合适服务器配置不同的情况；</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">pollingIp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 重建一个Map，避免服务器的上下线导致的并发问题</span></span><br><span class="line">        Map&lt;String, Integer&gt; serverMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">        serverMap.putAll(ipMap.serverWeightMap);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取得Ip地址List</span></span><br><span class="line">        Set&lt;String&gt; keySet = serverMap.keySet();</span><br><span class="line">        Iterator&lt;String&gt; iterator = keySet.iterator();</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; serverList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">            String server = iterator.next();</span><br><span class="line">            <span class="keyword">int</span> weight = serverMap.get(server);</span><br><span class="line">            <span class="comment">/*循环获取map 中的key 的value 是多少 放入list中 */</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; weight; i++)</span><br><span class="line">                serverList.add(server);</span><br><span class="line">        &#125;</span><br><span class="line">        String server = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">synchronized</span> (pos) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pos &gt; keySet.size())</span><br><span class="line">                pos = <span class="number">0</span>;</span><br><span class="line">            server = serverList.get(pos);</span><br><span class="line">            pos ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> server;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="最小连接"><a href="#最小连接" class="headerlink" title="最小连接"></a>最小连接</h6><p>最小连接数算法比较灵活和智能，由于后端服务器的配置不尽相同，对于请求的处理有 快有慢，它正是根据后端服务器当前的连接情况，动态地选取其中当前积压连接数最少的一台服务器来处理当前请求，尽可能地提高后端服务器的利用效率，将负载 合理地分流到每一台机器。由于最小连接数设计服务器连接数的汇总和感知，设计与实现较为繁琐。</p>
 <ul>
-<li>最小连接：最小连接数算法比较灵活和智能，由于后端服务器的配置不尽相同，对于请求的处理有 快有慢，它正是根据后端服务器当前的连接情况，动态地选取其中当前积压连接数最少的一台服务器来处理当前请求，尽可能地提高后端服务器的利用效率，将负载 合理地分流到每一台机器。由于最小连接数设计服务器连接数的汇总和感知，设计与实现较为繁琐。</li>
-<li>散列：根据请求源的 IP 的散列（hash）来选择要转发的服务器。这种方式可以一定程度上保证特定用户能连接到相同的服务器。如果你的应用需要处理状态而要求用户能连接到和之前相同的服务器，可以考虑采取这种方式。</li>
+<li>优点：根据服务器当前的情况处理请求，动态分配</li>
+<li>缺点：算法实现相对复杂，需要监控服务器请求连接数；</li>
 </ul>
-<p>​    </p>
+<h6 id="散列"><a href="#散列" class="headerlink" title="散列"></a>散列</h6><p>根据请求源的某一值(IP)的散列（hash）来选择要转发的服务器。这种方式可以一定程度上保证特定用户能连接到相同的服务器。如果你的应用需要处理状态而要求用户能连接到和之前相同的服务器，可以考虑采取这种方式。</p>
+<ul>
+<li>优点：将来自同一ip地址的请求，同一会话期内，转发到相同的服务器，直到后端服务器列表变更， 根据此特性 可以在服务先飞这与服务提供者之间建立有状态的session会话 实现会话粘贴。</li>
+<li>缺点：某一目标服务器宕机后，当前服务器会话消失，出现hash倾斜</li>
+</ul>
+<p>出现hash倾斜的解决方案：虚拟节点，在真实的服务器节点之间 添加 添加服务器节点映射(虚拟节点)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">hash</span><span class="params">(String remoteIp)</span></span>&#123;</span><br><span class="line">       <span class="comment">// 重建一个Map，避免服务器的上下线导致的并发问题</span></span><br><span class="line">       Map&lt;String, Integer&gt; serverMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">       serverMap.putAll(ipMap.serverWeightMap);</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 取得Ip地址List</span></span><br><span class="line">       Set&lt;String&gt; keySet = serverMap.keySet();</span><br><span class="line">       ArrayList&lt;String&gt; keyList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">       keyList.addAll(keySet);</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 在Web应用中可通过HttpServlet的getRemoteIp方法获取</span></span><br><span class="line">       <span class="comment">//String remoteIp = "127.0.0.1";</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> hashCode = remoteIp.hashCode();</span><br><span class="line">       <span class="keyword">int</span> serverListSize = keyList.size();</span><br><span class="line">       <span class="keyword">int</span> serverPos = hashCode % serverListSize;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> keyList.get(serverPos);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h5><p>实际项目中的话肯定是多个均衡算法糅合在一起实现。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/负载均衡/" data-id="ck10k7d1j000b0osuh5mbfro1" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/06/23/负载均衡/" data-id="ckodqstzc000dfcsuqom232ws" class="article-share-link">分享</a>
       
     </footer>
 
@@ -138,7 +202,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/05/05/Liskov-Substitution-Principle/">Liskov Substitution Principle</a>
+      <a class="article-title" href="/2019/05/05/Liskov-Substitution-Principle/">Liskov Substitution Principle - 里氏代换原则</a>
     </h2>
   
 
@@ -169,8 +233,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/05/Liskov-Substitution-Principle/" data-id="ck10k7d1e00090osu8odx61tl" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/05/05/Liskov-Substitution-Principle/" data-id="ckodqstz20007fcsu7bjo6x9l" class="article-share-link">分享</a>
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码-1/">代码  1</a></li></ul>
+
     </footer>
 
   </div>
@@ -195,7 +261,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/26/Single-responsibility-principle/">Single responsibility principle</a>
+      <a class="article-title" href="/2019/04/26/Single-responsibility-principle/">Single responsibility principle - 单一职责原则</a>
     </h2>
   
 
@@ -227,8 +293,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/26/Single-responsibility-principle/" data-id="ck10k7d1700040osus7sefqo4" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/26/Single-responsibility-principle/" data-id="ckodqstz9000bfcsu3oth1gnh" class="article-share-link">分享</a>
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码/">代码</a></li></ul>
+
     </footer>
 
   </div>
@@ -253,7 +321,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/24/Open-Close-Principle/">Open Close Principle</a>
+      <a class="article-title" href="/2019/04/24/Open-Close-Principle/">Open Close Principle - 开闭原则</a>
     </h2>
   
 
@@ -284,8 +352,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/24/Open-Close-Principle/" data-id="ck10k7d1c00080osuqjbny4dv" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/24/Open-Close-Principle/" data-id="ckodqstz40009fcsuy57dckbn" class="article-share-link">分享</a>
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码/">代码</a></li></ul>
+
     </footer>
 
   </div>
@@ -310,7 +380,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/23/Twenty-three-design-patterns-of-Java/">Design Patterns of Java</a>
+      <a class="article-title" href="/2019/04/23/Twenty-three-design-patterns-of-Java/">Design Patterns of Java - 设计模式JAVA</a>
     </h2>
   
 
@@ -340,8 +410,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/23/Twenty-three-design-patterns-of-Java/" data-id="ck10k7d20000c0osu22rs7iqc" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/23/Twenty-three-design-patterns-of-Java/" data-id="ckodqstzb000cfcsukrrp4ym9" class="article-share-link">分享</a>
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码/">代码</a></li></ul>
+
     </footer>
 
   </div>
@@ -358,7 +430,7 @@
   
 
       
-        <article id="h-Hexo font table" class="article article-type-h" itemscope itemprop="blogPost" data-scroll-reveal>
+        <article id="post-Hexo的使用" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
@@ -366,7 +438,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/22/Hexo font table/">Hexo font table</a>
+      <a class="article-title" href="/2019/04/20/Hexo的使用/">Hexo的常用命令</a>
     </h2>
   
 
@@ -375,8 +447,8 @@
 
     
       <div class="article-meta">
-        <a href="/2019/04/22/Hexo font table/" class="article-date">
-  <time datetime="2019-04-22T01:23:55.000Z" itemprop="datePublished">2019-04-22</time>
+        <a href="/2019/04/20/Hexo的使用/" class="article-date">
+  <time datetime="2019-04-20T08:55:08.000Z" itemprop="datePublished">2019-04-20</time>
 </a>
         
       </div>
@@ -388,14 +460,17 @@
       
 
       
-        <h3 id="1，字体介绍"><a href="#1，字体介绍" class="headerlink" title="1，字体介绍"></a>1，字体介绍</h3><p><em>这是斜体</em> 或 <em>这也是斜体</em><br><strong>这是粗体</strong><br><strong><em>这是加粗斜体</em></strong><br><del>这是删除线</del><br></p>
-        
-          <a class="article-more-link" href="/2019/04/22/Hexo font table/">阅读全文...</a>
-        
+        <p><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>第一篇文章,查看<a href="https://hexo.io/docs/" target="_blank" rel="noopener">文档</a>以获取更多信息.</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>启动之后访问：<a href="http://localhost:4000" target="_blank" rel="noopener">主页</a></p>
+<h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/22/Hexo font table/" data-id="ck10k7d1a00060osuj4ovgzg5" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/20/Hexo的使用/" data-id="ckodqstyz0005fcsu7wp9iw4x" class="article-share-link">分享</a>
       
     </footer>
 
@@ -413,7 +488,7 @@
   
 
       
-        <article id="w-Hexo Code specification" class="article article-type-w" itemscope itemprop="blogPost" data-scroll-reveal>
+        <article id="w-Hexo写作" class="article article-type-w" itemscope itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
     
@@ -421,7 +496,7 @@
         
   
     <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/19/Hexo Code specification/">Hexo Code specification</a>
+      <a class="article-title" href="/2019/04/19/Hexo写作/">Hexo的写作标签</a>
     </h2>
   
 
@@ -430,7 +505,7 @@
 
     
       <div class="article-meta">
-        <a href="/2019/04/19/Hexo Code specification/" class="article-date">
+        <a href="/2019/04/19/Hexo写作/" class="article-date">
   <time datetime="2019-04-19T08:55:08.000Z" itemprop="datePublished">2019-04-19</time>
 </a>
         
@@ -445,8 +520,8 @@
     <div class="article-gallery-photos">
       
         
-          <a class="article-gallery-img" href="/2019/04/19/Hexo Code specification/" rel="gallery_ck10k7d1200020osunk2bcenz">
-            <img src="https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-759547.png" itemprop="image">
+          <a class="article-gallery-img" href="/2019/04/19/Hexo写作/" rel="gallery_ckodqstyx0003fcsu4ighe1l7">
+            <img src="https://w.wallhaven.cc/full/6o/wallhaven-6od3px.jpg" itemprop="image">
           </a>
         
       
@@ -458,68 +533,12 @@
         <h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><p>在文章中插入引言，可包含作者、来源和标题。<br><blockquote><p>content</p>
 <footer><strong>作者,来源</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="noopener">原链接标题</a></cite></footer></blockquote><br></p>
         
-          <a class="article-more-link" href="/2019/04/19/Hexo Code specification/">阅读全文...</a>
+          <a class="article-more-link" href="/2019/04/19/Hexo写作/">阅读全文...</a>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/Hexo Code specification/" data-id="ck10k7d1200020osunk2bcenz" class="article-share-link">分享</a>
-      
-    </footer>
-
-  </div>
-  
-
-  
-  
-  
-  
-
-
-</article>
-
-  
-
-      
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h2 itemprop="name">
-      <a class="article-title" href="/2019/04/19/hello-world/">Hello World</a>
-    </h2>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2019/04/19/hello-world/" class="article-date">
-  <time datetime="2019-04-19T08:47:54.228Z" itemprop="datePublished">2019-04-19</time>
-</a>
-        
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-
-      
-
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-link" href="/2019/04/19/hello-world/">阅读全文...</a>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/19/hello-world/" data-id="ck10k7d1f000a0osudfs7srxk" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2019/04/19/Hexo写作/" data-id="ckodqstyx0003fcsu4ighe1l7" class="article-share-link">分享</a>
       
     </footer>
 
@@ -555,7 +574,7 @@
 </ul>
     </div>
     <ul class="list-inline">
-      <li>&copy; 2019 LeungJay</li>
+      <li>&copy; 2021 LeungJay</li>
       <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
       <li>Theme  <a href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
     </ul>
