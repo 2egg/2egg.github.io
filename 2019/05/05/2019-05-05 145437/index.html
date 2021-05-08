@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>Liskov Substitution Principle - 里氏代换原则 | 2egg</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="代码,设计模式,Java">
+    
+    <meta name="description" content="里氏代换原则 —— LSP任何基类可以出现的地方，子类一定可以出现！  &amp;emsp;&amp;emsp;里氏替换原则，OCP作为OO的高层原则，主张使用“抽象(Abstraction)”和“多态(Polymorphism)”将设计中的静态结构改为动态结构，维持设计的封闭性。“抽象”是语言提供的功能。“多态”由继承语义实现。">
+<meta name="keywords" content="代码,设计模式,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Liskov Substitution Principle - 里氏代换原则">
+<meta property="og:url" content="https://2egg.github.io/2019/05/05/2019-05-05 145437/index.html">
+<meta property="og:site_name" content="2egg">
+<meta property="og:description" content="里氏代换原则 —— LSP任何基类可以出现的地方，子类一定可以出现！  &amp;emsp;&amp;emsp;里氏替换原则，OCP作为OO的高层原则，主张使用“抽象(Abstraction)”和“多态(Polymorphism)”将设计中的静态结构改为动态结构，维持设计的封闭性。“抽象”是语言提供的功能。“多态”由继承语义实现。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-08T02:06:57.404Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Liskov Substitution Principle - 里氏代换原则">
+<meta name="twitter:description" content="里氏代换原则 —— LSP任何基类可以出现的地方，子类一定可以出现！  &amp;emsp;&amp;emsp;里氏替换原则，OCP作为OO的高层原则，主张使用“抽象(Abstraction)”和“多态(Polymorphism)”将设计中的静态结构改为动态结构，维持设计的封闭性。“抽象”是语言提供的功能。“多态”由继承语义实现。">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="2egg" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">2egg的博客</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/学习/">学习</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/工作/">工作</a></li></ul>
+                                
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/gallery">相册</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
+    <input name="wd" type="text" class="search-form-input" placeholder="搜索">
+</form>
+<script>
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:2egg.github.io ' + keyword;
+        return false;
+    });
+})(jQuery);
+</script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/学习/">学习</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-2019-05-05 145437" class="article article-single article-type-post
+" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Liskov Substitution Principle - 里氏代换原则
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2019/05/05/2019-05-05 145437/" class="article-date">
+       <time datetime="2019-05-05T06:54:37.000Z" itemprop="datePublished">2019-05-05</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2019/05/05/2019-05-05 145437/" class="article-date">
+     <time datetime="2021-05-08T02:06:57.404Z" itemprop="dateModified">2021-05-08</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/代码/">代码</a>, <a class="tag-link" href="/tags/设计模式/">设计模式</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+			
+			
+
+            <h2 id="里氏代换原则-——-LSP"><a href="#里氏代换原则-——-LSP" class="headerlink" title="里氏代换原则 —— LSP"></a>里氏代换原则 —— LSP</h2><blockquote><p>任何基类可以出现的地方，子类一定可以出现！</p>
+</blockquote>
+<p>&emsp;&emsp;里氏替换原则，OCP作为OO的高层原则，主张使用“抽象(Abstraction)”和“多态(Polymorphism)”将<strong>设计中的静态结构改为动态结构，维持设计的封闭性</strong>。“抽象”是语言提供的功能。“多态”由继承语义实现。<br><a id="more"></a><br>里氏替换原则包含以下4层含义：</p>
+<ul>
+<li>子类可以实现父类的抽象方法，但是不能覆盖父类的非抽象方法。</li>
+<li>子类可以增加自己特有的方法。</li>
+<li>当子类覆盖或者实现父类的方法时，方法的前置条件（方法的形象）要比父类的方法输入参数更宽松。</li>
+<li>当子类的方法实现父类的抽象方法时，方法的后置条件（即方法的返回值） 要比父类的更加严谨。</li>
+</ul>
+<p>&emsp;&emsp;LSP 一个软件如果使用的是一个父类的话， 那么一定适用于其子类， 而察觉不出父类对象和子类对象的区别。 也即是说，在软件里面，<strong> 把父类替换成它的子类， 程序的行为不会有变化</strong>， 简单地说， 子类型必须能够替换掉它们的父类型。 举个例子：<strong>企鹅和鸟的关系，企鹅在生物学上属于鸟类，但在面对对象设计中 企鹅并不能以父类(鸟)的身份出现 ，因为企鹅并不具备鸟飞行的行为！</strong> 如果有两个具体的类：A,B 之间的关系违反了LSP的设计，那么根据具体的情况可以在下面的两种重构方案中选择：</p>
+<ul>
+<li><figure class="highlight java"><figcaption><span>创建一个新的超类C（抽象类），将A,B的共同行为转移到C中来解决问题。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dad</span> </span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 菜() &#123;</span><br><span class="line">		System.out.println(<span class="string">"红烧排骨"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Dad</span> </span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 菜()&#123;</span><br><span class="line">		System.out.println(<span class="string">"红烧鱼"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">void</span> 西点()&#123;</span><br><span class="line">		System.out.println(<span class="string">"蛋糕"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">Son s = <span class="keyword">new</span> Son();</span><br><span class="line">s.菜();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dad</span> <span class="keyword">extends</span> <span class="title">Mom</span> </span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 菜() &#123;</span><br><span class="line">		<span class="keyword">super</span>.家传菜(<span class="string">"红烧排骨"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Mom</span> </span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 菜()&#123;</span><br><span class="line">		<span class="keyword">super</span>.家传菜(<span class="string">"红烧鱼"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">void</span> 西点()&#123;</span><br><span class="line">		System.out.println(<span class="string">"蛋糕"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mom</span> </span>&#123;</span><br><span class="line">	<span class="keyword">void</span> 家传菜(String 菜) &#123;</span><br><span class="line">		System.out.println(菜);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Son s = <span class="keyword">new</span> Son();</span><br><span class="line">s.菜();</span><br><span class="line"></span><br><span class="line">Dad d = <span class="keyword">new</span> Son();</span><br><span class="line">d.菜();</span><br><span class="line">这样的话行为没有改变，行为都是做家传菜 但是做出来的家传菜内容不一样！</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>以下方式经常被实际运用</strong></p>
+<figure class="highlight java"><figcaption><span>从B到A的继承关系改为委派关系。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">原本继承关系(Inheritance)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"A Data"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">B b = <span class="keyword">new</span> B();</span><br><span class="line">b.print();</span><br><span class="line"></span><br><span class="line">变成委派关系(Delegation)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"The Delegate"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">	A a = <span class="keyword">new</span> A();</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		a.print();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">B b = <span class="keyword">new</span> B();</span><br><span class="line">b.print();</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://2egg.github.io/2019/05/05/2019-05-05 145437/" data-id="ckofh22d3000db0suvr6yqh7j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "2egg"
+        },
+        "headline": "Liskov Substitution Principle - 里氏代换原则",
+        "image": "https://2egg.github.io",
+        "keywords": "代码 设计模式 Java",
+        "genre": "学习",
+        "datePublished": "2019-05-05",
+        "dateCreated": "2019-05-05",
+        "dateModified": "2021-05-08",
+        "url": "https://2egg.github.io/2019/05/05/2019-05-05 145437/",
+        "description": "里氏代换原则 —— LSP任何基类可以出现的地方，子类一定可以出现！
+
+&emsp;&emsp;里氏替换原则，OCP作为OO的高层原则，主张使用“抽象(Abstraction)”和“多态(Polymorphism)”将设计中的静态结构改为动态结构，维持设计的封闭性。“抽象”是语言提供的功能。“多态”由继承语义实现。",
+        "wordCount": 318
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/Wanglaoseng" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/2egg/2egg" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/06/23/2019-06-23 112035/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            负载均衡
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/04/26/2019-04-26 170950/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Single responsibility principle - 单一职责原则</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/07/30/2019-07-30 165411/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/学习/">学习</a></p>
+                            <p class="item-title"><a href="/2019/07/30/2019-07-30 165411/" class="title">百度快照提交</a></p>
+                            <p class="item-date"><time datetime="2019-07-30T08:54:11.000Z" itemprop="datePublished">2019-07-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/06/23/2019-06-23 112035/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://w.wallhaven.cc/full/y8/wallhaven-y8q667.png)" alt="负载均衡" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/学习/">学习</a></p>
+                            <p class="item-title"><a href="/2019/06/23/2019-06-23 112035/" class="title">负载均衡</a></p>
+                            <p class="item-date"><time datetime="2019-06-23T03:20:35.000Z" itemprop="datePublished">2019-06-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/05/05/2019-05-05 145437/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/学习/">学习</a></p>
+                            <p class="item-title"><a href="/2019/05/05/2019-05-05 145437/" class="title">Liskov Substitution Principle - 里氏代换原则</a></p>
+                            <p class="item-date"><time datetime="2019-05-05T06:54:37.000Z" itemprop="datePublished">2019-05-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/04/26/2019-04-26 170950/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/学习/">学习</a></p>
+                            <p class="item-title"><a href="/2019/04/26/2019-04-26 170950/" class="title">Single responsibility principle - 单一职责原则</a></p>
+                            <p class="item-date"><time datetime="2019-04-26T09:09:50.000Z" itemprop="datePublished">2019-04-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/04/24/2019-04-24 091130/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/学习/">学习</a></p>
+                            <p class="item-title"><a href="/2019/04/24/2019-04-24 091130/" class="title">Open Close Principle - 开闭原则</a></p>
+                            <p class="item-date"><time datetime="2019-04-24T01:11:30.000Z" itemprop="datePublished">2019-04-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工作/">工作</a><span class="category-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码/">代码</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/代码/" style="font-size: 20px;">代码</a> <a href="/tags/设计模式/" style="font-size: 15px;">设计模式</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+                <div class="widget-wrap widget-float">
+
+    <h3 class="widget-title">Sponsored</h3>
+    <div class="widget">
+        <a href="https://marcofranssen.nl?adsense_widget">This widget is sponsored by, Marco Franssen, main contributor to this theme.</a>
+    </div>
+
+</div>
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 2egg</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://2egg.github.io/2019/05/05/2019-05-05 145437/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+</body>
+</html>
