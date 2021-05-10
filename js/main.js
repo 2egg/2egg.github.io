@@ -10,7 +10,7 @@
     });
 
     // Caption
-    $('.article-entry').each(function(i) {
+    /**$('.article-entry').each(function(i) {
         $(this).find('img').each(function() {
             if (this.alt && !(!!$.prototype.justifiedGallery && $(this).parent('.justified-gallery').length)) {
                 $(this).after('<span class="caption">' + this.alt + '</span>');
@@ -22,7 +22,7 @@
             }
         });
 
-    });
+    });**/
     if (typeof lightGallery != 'undefined') {
         var options = {
             selector: '.gallery-item',
