@@ -64,7 +64,7 @@
     <url>%2F2019%2F04%2F23%2F2019-04-23%20131318%2F</url>
     <content type="text"><![CDATA[What is the design pattern?设计模式（Design Pattern）是一套被反复使用、多数人知晓的、经过分类的、代码设计经验的总结。使用设计模式的目的：为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。 设计模式使代码编写真正工程化；设计模式是软件工程的基石脉络，如同大厦的结构一样。 百度设计模式概念 设计原则为什么要提倡“Design Pattern呢？根本原因是为了代码复用，增加可维护性。那么怎么才能实现代码复用呢？面向对象有几个原则： 开闭原则（Open Closed Principle，OCP）、 单一职责原则（Single Responsiblity Principle SRP）、 里氏代换原则（Liskov Substitution Principle，LSP）、 依赖倒转原则（Dependency Inversion Principle，DIP）、 接口隔离原则（Interface Segregation Principle，ISP）、 合成/聚合复用原则（Composite/Aggregate Reuse Principle，CARP）、 最小知识原则（Principle of Least Knowledge，PLK，也叫迪米特法则）。 开闭原则具有理想主义的色彩，它是面向对象设计的终极目标。其他几条，则可以看做是开闭原则的实现方法。 设计模式就是实现了这些原则，从而达到了代码复用、增加可维护性的目的 百度设计模式设计原则]]></content>
       <categories>
-        <category>工作</category>
+        <category>学习</category>
       </categories>
       <tags>
         <tag>代码</tag>
@@ -73,22 +73,11 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo的常用命令]]></title>
-    <url>%2F2019%2F04%2F20%2F2019-04-20%20165508%2F</url>
-    <content type="text"><![CDATA[Hexo第一篇文章,查看文档以获取更多信息. 快速开始启动服务1$ hexo server 启动之后访问：主页 创建新文章1$ hexo new "My New Post" 生成静态文件1$ hexo generate 部署1$ hexo deploy]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Hexo的写作标签]]></title>
     <url>%2F2019%2F04%2F19%2F2019-04-19%20165508%2F</url>
-    <content type="text"><![CDATA[引用块在文章中插入引言，可包含作者、来源和标题。content 作者,来源原链接标题没有提供参数，则只输出普通的 blockquoteLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem. 引用书上的句子Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy. David LevithanWide Awake 引用 TwitterNEW: DevDocs now comes with syntax highlighting. http://devdocs.io @DevDocstwitter.com/devdocs/status/356095192085962752 引用网络上的文章Every interaction is both precious and an opportunity to delight. Seth GodinWelcome to Island Marketing 代码块普通代码块12alert(&apos;Hello World!&apos;);alert(&apos;Hello World!&apos;);指定语言1[rectangle setX: 10 y: 10 width: 20 height: 20];附加说明Array.map1array.map(callback[, thisArg])附加说明和网址_.compactUnderscore.js12_.compact([0, 1, false, 2, &apos;&apos;, 3]);=&gt; [1, 2, 3]另一种表现形式说明Underscore.js1alert('Hello World!') 在文章中插入获取的引用content 引用图添加一个内嵌页面 iframe1&#123;% iframe https://www.baidu.com %&#125; 在文章中插入指定大小的图片。1&#123;% img https://w.wallhaven.cc/full/72/wallhaven-72jwp3.jpg 700 450 这是一辆小汽车 %&#125; 插入图（本地） 文字链接1&#123;% link 百度 https://www.baidu.com/ 作者 提示 %&#125; 段落12 content 34]]></content>
+    <content type="text"><![CDATA[Hexo第一篇文章,查看文档以获取更多信息. 命令常用命令更多命令12345678//1.启动服务hexo server//2.创建新文章hexo new "My New Post"//3.生成静态文件hexo generate//4.部署hexo deploy 标签参照markdown语法,部分特殊语法需查看HEXO文档]]></content>
       <categories>
-        <category>工作</category>
+        <category>学习</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
