@@ -237,7 +237,7 @@
 
 
 
-    <a data-url="https://2egg.github.io/2021/05/12/Excel加密/" data-id="ckol4ytiw0015b4sucdt2f6yi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://2egg.github.io/2021/05/12/Excel加密/" data-id="ckol5kd940003losubhn5jymc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -353,9 +353,7 @@ XML
     <section id="comments">
     
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+<div id="comment-container"></div>
 
 
     
@@ -627,20 +625,19 @@ XML
     </div>
     
     
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'https://2egg.github.io/2021/05/12/Excel加密/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '1a6e51c85546cc666cfc',
+        clientSecret: '1a6e51c85546cc666cfc',
+        id: 'f04884abdd39fa72fd320ab9ec55a41e',
+        repo: '2egg.github.io',
+        owner: '2egg',
+        admin: "2egg"
+    })
+    gitalk.render('comment-container')
+</script>
 
 
 

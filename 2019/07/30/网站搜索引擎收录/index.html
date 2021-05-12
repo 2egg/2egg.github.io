@@ -204,7 +204,7 @@
 
 
 
-    <a data-url="https://2egg.github.io/2019/07/30/网站搜索引擎收录/" data-id="ckol4ythu0007b4sudhtdhpg2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://2egg.github.io/2019/07/30/网站搜索引擎收录/" data-id="ckol5kd9e0008losuny6jb5hq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -297,9 +297,7 @@
     <section id="comments">
     
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+<div id="comment-container"></div>
 
 
     
@@ -581,20 +579,19 @@
     </div>
     
     
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'https://2egg.github.io/2019/07/30/网站搜索引擎收录/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '1a6e51c85546cc666cfc',
+        clientSecret: '1a6e51c85546cc666cfc',
+        id: '90a4da74d3e8dea33f9f7761d93d0d97',
+        repo: '2egg.github.io',
+        owner: '2egg',
+        admin: "2egg"
+    })
+    gitalk.render('comment-container')
+</script>
 
 
 
