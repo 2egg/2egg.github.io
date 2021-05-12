@@ -7,7 +7,7 @@
     
 
     
-    <title>标签: 设计模式 | 2egg</title>
+    <title>2egg</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -15,10 +15,11 @@
 <meta name="keywords" content="2egg的博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="2egg">
-<meta property="og:url" content="https://2egg.github.io/tags/设计模式/index.html">
+<meta property="og:url" content="https://2egg.github.io/tags/index.html">
 <meta property="og:site_name" content="2egg">
 <meta property="og:description" content="愿此生尽兴，赤忱善良！">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-12T09:08:46.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2egg">
 <meta name="twitter:description" content="愿此生尽兴，赤忱善良！">
@@ -118,175 +119,128 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>标签: <em>设计模式</em>
+    2egg
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
+                            <article id="page-" class="article article-single article-type-page
+" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
 
-    
-    
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/05/05/里氏代换原则/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://w.wallhaven.cc/full/0q/wallhaven-0qjdx5.png)" alt="Liskov Substitution Principle - 里氏代换原则" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="https://2egg.github.io/2019/05/05/里氏代换原则/#isso-thread"></a></span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            
 
+            
 
-    
-</a>
+            
 
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/学习/">学习</a>
-            </div>
-            <div class="date"><time datetime="2019-05-05T06:54:37.000Z" itemprop="datePublished">2019-05-05</time></div>
+			
+			
+
+            
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/05/里氏代换原则/">Liskov Substitution Principle - 里氏代换原则</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            里氏代换原则 —— LSP任何基类可以出现的地方，子类一定可以出现！
 
-&emsp;&emsp;里氏替换原则，OCP作为OO的高层原则，主张使用“抽象(Abstraction)”和“多态(Polymorphism)”将设计中的静态结构改为动态结构，维持设计的封闭性。“抽象”是语言提供的功能。“多态”由继承语义实现。
-        </p>
+
+    <a data-url="https://2egg.github.io/tags/index.html" data-id="ckol8tfiw0007s8su0rssm9y8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "HLJ"
+        },
+        
+        "image": "https://2egg.github.io",
+        
+        
+        "datePublished": "2021-05-12",
+        "dateCreated": "2021-05-12",
+        "dateModified": "2021-05-12",
+        "url": "https://2egg.github.io/tags/index.html",
+        "description": "",
+        "wordCount": 1
+    }
+</script>
+
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/04/26/单一职责院子/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://w.wallhaven.cc/full/0q/wallhaven-0qjdx5.png)" alt="Single responsibility principle - 单一职责原则" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="https://2egg.github.io/2019/04/26/单一职责院子/#isso-thread"></a></span>
-    
-</span>
+<div id="comment-container"></div>
 
 
     
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/学习/">学习</a>
-            </div>
-            <div class="date"><time datetime="2019-04-26T09:09:50.000Z" itemprop="datePublished">2019-04-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/26/单一职责院子/">Single responsibility principle - 单一职责原则</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            单一职责原则 —— SRP一个类应该只有一个发生变化的原因
-Robert C. Martin敏捷软件开发：原则、模式和实践
-&emsp;&emsp;所谓职责是指类变化的原因。如果一个类有多于一个的动机被改变，那么这个类就具有多于一个的职责。而单一职责原则就是指一个类或者模块应该有且只有一个改变的原因。(看看就行)
-&emsp;&emsp;如果一个类承担的职责过多，就等于把这些职责耦合在一起了。一个职责的变化可能会削弱或者抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当发生变化时，设计会遭受到意想不到的破坏。而如果想要避免这种现象的发生，就要尽可能的遵守单一职责原则。此原则的核心就是解耦和增强内聚性。
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/04/23/设计模式/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://w.wallhaven.cc/full/0q/wallhaven-0qjdx5.png)" alt="Design Patterns of Java - 设计原则JAVA" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span><a href="https://2egg.github.io/2019/04/23/设计模式/#isso-thread"></a></span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/学习/">学习</a>
-            </div>
-            <div class="date"><time datetime="2019-04-23T05:13:18.000Z" itemprop="datePublished">2019-04-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/23/设计模式/">Design Patterns of Java - 设计原则JAVA</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            What is the design pattern?设计模式（Design Pattern）是一套被反复使用、多数人知晓的、经过分类的、代码设计经验的总结。使用设计模式的目的：为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。 设计模式使代码编写真正工程化；设计模式是软件工程的基石脉络，如同大厦的结构一样。
-百度设计模式概念
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
+    </section>
 
 
 
@@ -547,7 +501,7 @@ Robert C. Martin敏捷软件开发：原则、模式和实践
     var gitalk = new Gitalk({
         clientID: '1a6e51c85546cc666cfc',
         clientSecret: 'e4cd53709f0ef661f93d48bbbed864f08f0fb9d4',
-        id: '940f6b58f09bf9fe6672a220cb7deab9',
+        id: '27316328dc67e89420ebaa331a0a1e91',
         repo: '2egg.github.io',
         owner: '2egg',
         admin: "2egg"
