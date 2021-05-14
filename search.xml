@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[更新显卡出错]]></title>
+    <url>%2F2021%2F05%2F14%2F%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E5%87%BA%E9%94%99%2F</url>
+    <content type="text"><![CDATA[更新显卡出错，提示缺少SHA-2更新补丁 需要安装两个更新补丁. 下载地址： kb4474419 kb4490628 根据系统选择下载好驱动版本之后，windows 7 系统如果直接安装，可能出现提示框 安装程序遇到错误：0x80240037 解决方案： 补丁文件复制一份（避免出错再次下载）. 更改复制后的补丁文件后缀名（.msu 改为.cab） 解压该文件至新文件夹中(kb4474419) 点击开始菜单 搜索 cmd.exe ,右键以管理员身份运行 输入该命令后修改命令中的路径运行 1234Microsoft Windows [版本 6.1.7601]版权所有 (c) 2009 Microsoft Corporation。保留所有权利。C:\windows\system32&gt;dism /online /add-package /packagepath:"C:\test\kb4474419\Windows6.1-KB4474419-v3-x64.cab" 6.等待安装完成，另外一个补丁同上操作 补丁安装完成之后就可以继续更新显卡了]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>显卡</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[高并发]]></title>
+    <url>%2F2021%2F05%2F13%2F%E9%AB%98%E5%B9%B6%E5%8F%91%2F</url>
+    <content type="text"><![CDATA[高并发]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[数据库事务]]></title>
+    <url>%2F2021%2F05%2F13%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%2F</url>
+    <content type="text"><![CDATA[特性 - ACID atomicity(原子性) - .一个事务是一个不可分割的工作单位，事务中包括的操作要么都做，要么都不做 consistency(一致性) - 事务必须是使数据库从一个一致性状态变到另一个一致性状态。一致性与原子性是密切相关的 isolation(隔离性) - 一个事务的执行不能被其他事务干扰。即一个事务内部的操作及使用的数据对并发的其他事务是隔离的，并发执行的各个事务之间不能互相干扰 durability(持久性) - 持久性也称永久性（permanence），指一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其有任何影响 隔离级别 一个事务必须与由其他事务进行的资源或数据更改相隔离的程度。隔离级别从允许的并发副作用（例如，脏读或虚拟读取）的角度进行描述。 副作用不同级别带来的副作用 隔离级别 脏读 不可重复读 幻读 read uncommitted 未提交读 是 是 是 read committed 已提交读 否 是 是 repeatable read 可重复读 否 否 是 SNAPSHOT 快照 否 否 否 serializable 可序列化(串行读) 否 否 否 脏读:一事务对数据进行了增删改,但未提交,有可能回滚,另一事务却读取了未提交的数据 不可重复读:一事务对数据进行了更新或删除操作,另一事务两次查询的数据不一致 幻读:一事务对数据进行了新增操作,另一事务两次查询的数据不一致]]></content>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Excel Encryption - 加密导出]]></title>
     <url>%2F2021%2F05%2F12%2FExcel%E5%8A%A0%E5%AF%86%2F</url>
     <content type="text"><![CDATA[工作中经常系统导出Excel表格后，我们会发现导出后很可能会造成数据泄露，导出后不可能每次都记得去给Excel表格手动设置密码，后台直接进行加密，这样可以很有效的防止数据被盗取. 加密前需要了解excel有两种常见的文件格式，且加密方式也不同 文件格式 结构 版本 行 列 优点 xls 复合文档 2003及以前 65536 256 - xlsx XML 2007及以后 1048576 16384 兼容xls 相同内容占用更小 需要用到的包 POI 文件转文件 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657/*** 设置密码* @return enc*/public Encryptor confirmPassWord(String passWord)&#123; EncryptionInfo info = new EncryptionInfo(EncryptionMode.agile); Encryptor enc = info.getEncryptor(); enc.confirmPassword(StringUtils.isBlank(passWord)?"123456":passWord); return enc;&#125;/*** 加密EXCEL文档(xls)* @param sourceFilePath源文件* @param targetFilePath目标文件* @param passWord 密码* @return* @throws Exception*/public boolean encrypXLS(String sourceFilePath, String targetFilePath, String passWord)throws IOException&#123; InputStream ins = new FileInputStream(sourceFilePath); OutputStream out = new FileOutputStream(targetFilePath); POIFSFileSystem fs = new POIFSFileSystem(ins); HSSFWorkbook hwb = new HSSFWorkbook(fs); try &#123; Biff8EncryptionKey.setCurrentUserPassword(passWord); hwb.write(out); return true; &#125; catch (Exception e) &#123; log.error("XLS文档加密失败:&#123;&#125;",e.getMessage()); return false; &#125;finally &#123; ins.close(); out.close(); fs.close(); hwb.close(); &#125;&#125;/*** 加密EXCEL文档(xlsx)* @param sourceFilePath 源文件* @param targetFilePath 目标文件* @param passWord 密码*/public void encrypXLSX(String sourceFilePath, String targetFilePath,String passWord)throws IOException&#123; OutputStream fos = new FileOutputStream(targetFilePath); try (POIFSFileSystem fs = new POIFSFileSystem()) &#123; OPCPackage opc = OPCPackage.open(sourceFilePath, PackageAccess.READ_WRITE); OutputStream os = confirmPassWord(passWord).getDataStream(fs); opc.save(os); fs.writeFilesystem(fos); &#125;catch (Exception e) &#123; log.error("XLSX文档加密失败:&#123;&#125;",e.getMessage()); e.printStackTrace(); &#125;finally &#123; fos.close(); &#125;&#125; 对象转客户端 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364/*** 将excel 对象转为输出 Byte数组* @param workbook* @return ByteArrayInputStream*/public ByteArrayInputStream parseByteArrayInputStream(Workbook workbook)&#123; ByteArrayInputStream workbookInput = null; try&#123; ByteArrayOutputStream baos = new ByteArrayOutputStream(); workbook.write(baos); baos.flush(); workbookInput = new ByteArrayInputStream(baos.toByteArray());// 输出流转为输入流 &#125;catch (IOException io)&#123; io.printStackTrace(); &#125; return workbookInput;&#125;/*** 加密EXCEL文档(xls) 不知道好不好用，未测试* @param hssfWorkbook* @param fileName 文件名* @param response 客户端* @param passWord 密码* @throws IOException*/public void encrypXLS(HSSFWorkbook hssfWorkbook,String fileName,HttpServletResponse response,String passWord)throws IOException&#123; try &#123; Biff8EncryptionKey.setCurrentUserPassword(passWord); response.reset(); response.setContentType("application/octet-stream; charset=utf-8"); response.addHeader("Content-Disposition", "attachment; filename*=utf-8'zh_cn'"+ URLEncoder.encode(fileName, "UTF-8")); hssfWorkbook.write(response.getOutputStream()); &#125; catch (Exception e) &#123; log.error("XLS文档加密失败:&#123;&#125;",e.getMessage()); &#125;finally &#123; hssfWorkbook.close(); &#125;&#125; /*** 加密EXCEL文档(xlsx)* @param workbook* @param fileName 文件名* @param response 客户端* @param passWord 密码*/public void encrypXLSX(Workbook workbook,String fileName,HttpServletResponse response,String passWord)&#123; try (POIFSFileSystem fs = new POIFSFileSystem()) &#123; ByteArrayInputStream workbookInput = parseByteArrayInputStream(workbook); try (OPCPackage opc = OPCPackage.open(workbookInput);OutputStream os = confirmPassWord(passWord).getDataStream(fs)) &#123; opc.save(os); &#125;// 写出加密版本 ByteArrayOutputStream baos = new ByteArrayOutputStream(); fs.writeFilesystem(baos); baos.flush(); response.reset(); response.setContentType("application/octet-stream; charset=utf-8"); response.addHeader("Content-Disposition", "attachment; filename*=utf-8'zh_cn'"+ URLEncoder.encode(fileName, "UTF-8")); response.getOutputStream().write(baos.toByteArray()); &#125;catch (Exception e) &#123; e.printStackTrace(); &#125;&#125;]]></content>
@@ -11,7 +35,7 @@
   <entry>
     <title><![CDATA[网站搜索引擎收录]]></title>
     <url>%2F2019%2F07%2F30%2F%E7%BD%91%E7%AB%99%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[搜索引擎快照，是指在访客在无法打开某个搜索结果，或者打开速度特别慢的情况下，为访客提供的之前保存在搜索引擎服务器上对应网页内容的纯文本。不过，搜索引擎保存的快照内容一般只包括文本数据，图片及其他多媒体等非文本数据不会被保存。因此，在来源网站无法访问的情况下，图片及其他多媒体在快照中将无法显示。 百度百科baike.baidu.com/item/快照/327038 百度 登陆注册百度搜索资源资源平台 进入用户中心-站点管理-添加网站 勾选网站属性 验证网站（下载验证文件baidu_verify_**.html 存放至域名根目录下 测试该文件是否可以访问,最后点击完成验证.） 验证之后点击该网站链接 可以看到所有网站关于搜索的情况 点击搜索展现-HTTPS认证（需要保证全站所有链接都支持HTTPS访问） 验证成功之后再次搜索就基本可以看到了（但是具体的文章还没弄好） 谷歌]]></content>
+    <content type="text"><![CDATA[搜索引擎快照，是指在访客在无法打开某个搜索结果，或者打开速度特别慢的情况下，为访客提供的之前保存在搜索引擎服务器上对应网页内容的纯文本。不过，搜索引擎保存的快照内容一般只包括文本数据，图片及其他多媒体等非文本数据不会被保存。因此，在来源网站无法访问的情况下，图片及其他多媒体在快照中将无法显示。 百度百科baike.baidu.com/item/快照/327038 百度 登陆注册百度搜索资源资源平台 进入用户中心-站点管理-添加网站 勾选网站属性 验证网站（下载验证文件baidu_verify_**.html 存放至域名根目录下 测试该文件是否可以访问,最后点击完成验证.） 验证之后点击该网站链接 可以看到所有网站关于搜索的情况 点击搜索展现-HTTPS认证（需要保证全站所有链接都支持HTTPS访问） 验证成功之后再次搜索就基本可以看到主页了（但是具体的文章内容什么时候可以搜到这个不太清楚） 谷歌]]></content>
       <categories>
         <category>学习</category>
       </categories>
@@ -45,6 +69,19 @@
     <title><![CDATA[Single responsibility principle - 单一职责原则]]></title>
     <url>%2F2019%2F04%2F26%2F%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E9%99%A2%E5%AD%90%2F</url>
     <content type="text"><![CDATA[单一职责原则 —— SRP一个类应该只有一个发生变化的原因 Robert C. Martin敏捷软件开发：原则、模式和实践 &emsp;&emsp;所谓职责是指类变化的原因。如果一个类有多于一个的动机被改变，那么这个类就具有多于一个的职责。而单一职责原则就是指一个类或者模块应该有且只有一个改变的原因。(看看就行) &emsp;&emsp;如果一个类承担的职责过多，就等于把这些职责耦合在一起了。一个职责的变化可能会削弱或者抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当发生变化时，设计会遭受到意想不到的破坏。而如果想要避免这种现象的发生，就要尽可能的遵守单一职责原则。此原则的核心就是解耦和增强内聚性。&emsp;&emsp;内聚标志一个模块内各个元素彼此结合的紧密程度，它是信息隐蔽和局部化概念的自然扩展。内聚是从功能角度来度量模块内的联系，一个好的内聚模块应当恰好做一件事。它描述的是模块内的功能联系。耦合是软件结构中各模块之间相互连接的一种度量，耦合强弱取决于模块间接口的复杂程度、进入或访问一个模块的点以及通过接口的数据。（T负责两个不同的职责：职责P1，职责P2。当由于职责P1需求发生改变而需要修改类T时，有可能会导致原本运行正常的职责P2功能发生故障。也就是说职责P1和P2被耦合在了一起。） &emsp;&emsp;程序讲究的是低耦合，高内聚。就是同一个模块内的各个元素之间要高度紧密，但是各个模块之间的相互依存度却要不那么紧密。内聚和耦合是密切相关的，同其他模块存在高耦合的模块意味着低内聚，而高内聚的模块意味着该模块同其他模块之间是低耦合。在进行软件设计时，应力争做到高内聚，低耦合。 实现单一职责原则的好处 降低类的复杂度； 提高类的可读性，提高系统的可维护性； 降低变更引起的风险（降低对其他功能的影响）; 实现单一职责原则的注意点 单一职责原则最难划分的是职责。 单一职责原则提出标准：用职责和变化原因来 错误Demo&emsp;&emsp;假设机器有四个步骤分别为：通电，启动，停止，断电；我们正确的方式应该是每个步骤写一个方法，最后写一个方法的集合，内容：什么时候调用通电 什么时候启动，什么时候停止，什么时候断电，而不是直接将四个步骤集合在一起，如果四个方法集合在一起的话，首先的问题是职责太多，不用解释，其次如果有一天我们只需要启动这个机器 不需要别的步骤 还需要再次寻找方法集合中的启动有哪些 复制出来之后冗余太多，最后的问题是我们自己都看不懂自己当初怎么写的了 内容太多，逻辑加控制，假设现在新增加一个需求，机器在通电之后3分钟之内没有启动的话自动执行断电，到这个时候我们就会很麻烦 首先步骤需要重新调试，其次控制也需要增加逻辑等等一系列问题…..]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>代码</tag>
+        <tag>设计模式</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Open Close Principle - 开闭原则]]></title>
+    <url>%2F2019%2F04%2F24%2F%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99%2F</url>
+    <content type="text"><![CDATA[开闭原则 —— OCPSoftware entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！) Bertrand MeyerWide Awake 模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748//工厂(Factory) 有一条生产线(prodLine),生产"产品A".public class Factory &#123; public String prodLine()&#123; return "产品A"; &#125;&#125;//客户 订购该工厂的该产品(产品A)public class Client1 &#123; public static void main(String args[]) &#123; System.out.println("我订购并收到产品："+order()); &#125; private static String order()&#123; Factory factory = new Factory(); return factory.prodLine(); &#125;&#125;//执行效果我订购并收到产品：产品A/*现因为市场需求改变增加,需要新加一条生产"产品B"的生产线, 但是资金有限。 只能再原有的生产线上增加功能(既可以生产A，又可以生产B)*/public class Factory &#123; public String prodLine(int type) &#123; if(type == 0)&#123; return "产品A"; &#125;else&#123; return "产品B"; &#125; &#125;&#125;/*当我们修改之后 会发现客户方有问题（订购不了产品） 因为什么！ 因为我们需要知道客户到底要什么产品(type)，客户没说，我们也不能做啊，不然做出来退货怎么办(出BUG)*/public class Client1 &#123; public static void main(String args[]) &#123; System.out.println("我订购并收到产品："+order()); &#125; private static String order()&#123; Factory factory = new Factory(); //客户申明要什么产品 return factory.prodLine(0); &#125;&#125;我订购并收到产品：产品A 以上只是最基本的开闭原则1234567891011121314151617181920212223242526272829303132//我们建厂之前需要提前写一个设计稿(接口)为未来做准备 比如 生产N种产品public interface IFactory &#123; String prodLine(int type);&#125;//现在市场上 出现了需要产品的客户 我们直接按照接口 建造工厂public class FactoryA implements IFactory&#123; @Override public String prodLine(int type) &#123; if(type == 0)&#123; return "产品A"; &#125;else&#123; return "产品B"; &#125; &#125;&#125;//客户方 没有变化 申明产品的类型public class Client1 &#123; public static void main(String args[]) &#123; System.out.println("我订购并收到产品："+order()); &#125; private static String order()&#123; Factory factory = new Factory(); //客户申明要什么产品 return factory.prodLine(0); &#125;&#125;我订购并收到产品：产品A/B]]></content>
       <categories>
         <category>学习</category>
       </categories>

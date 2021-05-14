@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://2egg.github.io/"/>
-  <updated>2020-07-29T16:00:00.000Z</updated>
+  <updated>2021-05-13T16:00:00.000Z</updated>
   <id>https://2egg.github.io/</id>
   
   <author>
@@ -17,13 +17,86 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>更新显卡出错</title>
+    <link href="https://2egg.github.io/2021/05/14/%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E5%87%BA%E9%94%99/"/>
+    <id>https://2egg.github.io/2021/05/14/更新显卡出错/</id>
+    <published>2021-05-14T02:57:59.000Z</published>
+    <updated>2021-05-13T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>更新显卡出错，提示缺少<code>SHA-2</code>更新补丁 需要安装两个更新补丁.</p><p>下载地址：</p><ol><li><a href="https://www.catalog.update.microsoft.com/search.aspx?q=4490628" target="_blank" rel="noopener">kb4474419</a></li><li><a href="https://www.catalog.update.microsoft.com/search.aspx?q=4490628" target="_blank" rel="noopener">kb4490628</a></li></ol><p>根据系统选择下载好驱动版本之后，windows 7 系统如果直接安装，可能出现提示框 <code>安装程序遇到错误：0x80240037</code> </p><p>解决方案：</p><ol><li><p>补丁文件复制一份（避免出错再次下载）.</p></li><li><p>更改复制后的补丁文件<strong>后缀名</strong>（<strong><em>.msu</em></strong> 改为<strong><em>.cab</em></strong>）</p><p><img src="/2021/05/14/更新显卡出错/image-20210514112011301.png" alt="image-20210514112011301"></p></li><li><p>解压该文件至<strong>新文件夹</strong>中(kb4474419)</p><p><img src="/2021/05/14/更新显卡出错/image-20210514111816706.png" alt="image-20210514111816706"></p></li><li><p>点击开始菜单 搜索 <strong>cmd.exe</strong> ,右键以管理员身份运行</p></li><li><p>输入该命令后<strong>修改命令中的路径</strong>运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Microsoft Windows [版本 6.1.7601]</span><br><span class="line">版权所有 (c) 2009 Microsoft Corporation。保留所有权利。</span><br><span class="line"></span><br><span class="line">C:\windows\system32&gt;dism /online /add-package /packagepath:"C:\test\kb4474419\Windows6.1-KB4474419-v3-x64.cab"</span><br></pre></td></tr></table></figure></li></ol><p>6.等待安装完成，另外一个补丁同上操作</p><p>补丁安装完成之后就可以继续更新显卡了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;更新显卡出错，提示缺少&lt;code&gt;SHA-2&lt;/code&gt;更新补丁 需要安装两个更新补丁.&lt;/p&gt;
+&lt;p&gt;下载地址：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.catalog.update.microsoft.com/search.aspx?q=4
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="https://2egg.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="显卡" scheme="https://2egg.github.io/tags/%E6%98%BE%E5%8D%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高并发</title>
+    <link href="https://2egg.github.io/2021/05/13/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    <id>https://2egg.github.io/2021/05/13/高并发/</id>
+    <published>2021-05-13T03:21:25.000Z</published>
+    <updated>2021-05-13T03:23:06.622Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="高并发"><a href="#高并发" class="headerlink" title="高并发"></a>高并发</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;高并发&quot;&gt;&lt;a href=&quot;#高并发&quot; class=&quot;headerlink&quot; title=&quot;高并发&quot;&gt;&lt;/a&gt;高并发&lt;/h2&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据库事务</title>
+    <link href="https://2egg.github.io/2021/05/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1/"/>
+    <id>https://2egg.github.io/2021/05/13/数据库事务/</id>
+    <published>2021-05-13T02:16:02.000Z</published>
+    <updated>2021-05-13T03:19:36.103Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="特性-ACID"><a href="#特性-ACID" class="headerlink" title="特性 - ACID"></a>特性 - ACID</h5><ol><li>atomicity(原子性) - .一个事务是一个不可分割的工作单位，事务中包括的操作要么都做，要么都不做</li><li>consistency(一致性) - 事务必须是使数据库从一个一致性状态变到另一个一致性状态。一致性与原子性是密切相关的</li><li>isolation(隔离性) - 一个事务的执行不能被其他事务干扰。即一个事务内部的操作及使用的数据对并发的其他事务是隔离的，并发执行的各个事务之间不能互相干扰</li><li>durability(持久性) - 持久性也称永久性（permanence），指一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其有任何影响</li></ol><h5 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a><a href="https://baike.baidu.com/item/%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB" target="_blank" rel="noopener">隔离级别</a></h5><blockquote><p>一个事务必须与由其他事务进行的资源或数据更改<strong>相隔离的程度</strong>。隔离级别从允许的<strong>并发副作用</strong>（例如，脏读或虚拟读取）的角度进行描述。</p></blockquote><h6 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h6><p>不同级别带来的副作用</p><table><thead><tr><th></th><th>隔离级别</th><th><a href="https://baike.baidu.com/item/%E8%84%8F%E8%AF%BB" target="_blank" rel="noopener">脏读</a></th><th><a href="https://baike.baidu.com/item/不可重复读/129509" target="_blank" rel="noopener">不可重复读</a></th><th><a href="https://baike.baidu.com/item/%E5%B9%BB%E8%AF%BB" target="_blank" rel="noopener">幻读</a></th></tr></thead><tbody><tr><td>read uncommitted</td><td>未提交读</td><td>是</td><td>是</td><td>是</td></tr><tr><td>read committed</td><td>已提交读</td><td>否</td><td>是</td><td>是</td></tr><tr><td>repeatable read</td><td><a href="https://baike.baidu.com/item/可重复读/5803956" target="_blank" rel="noopener">可重复读</a></td><td>否</td><td>否</td><td>是</td></tr><tr><td>SNAPSHOT</td><td>快照</td><td>否</td><td>否</td><td>否</td></tr><tr><td>serializable</td><td>可<a href="https://baike.baidu.com/item/序列化/2890184" target="_blank" rel="noopener">序列化</a>(串行读)</td><td>否</td><td>否</td><td>否</td></tr></tbody></table><ol><li>脏读:一事务对数据进行了增删改,但未提交,有可能<a href="https://baike.baidu.com/item/回滚" target="_blank" rel="noopener">回滚</a>,另一事务却读取了未提交的数据</li><li>不可重复读:一<a href="https://baike.baidu.com/item/事务" target="_blank" rel="noopener">事务</a>对数据进行了更新或删除操作,另一事务两次查询的数据不一致</li><li>幻读:一事务对数据进行了新增操作,另一事务两次查询的数据不一致</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;特性-ACID&quot;&gt;&lt;a href=&quot;#特性-ACID&quot; class=&quot;headerlink&quot; title=&quot;特性 - ACID&quot;&gt;&lt;/a&gt;特性 - ACID&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;atomicity(原子性) - .一个事务是一个不可分割的工作单位，事务中包括
+      
+    
+    </summary>
+    
+    
+      <category term="Mysql" scheme="https://2egg.github.io/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>网站搜索引擎收录</title>
     <link href="https://2egg.github.io/2019/07/30/%E7%BD%91%E7%AB%99%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95/"/>
     <id>https://2egg.github.io/2019/07/30/网站搜索引擎收录/</id>
     <published>2019-07-30T08:54:11.000Z</published>
     <updated>2020-07-29T16:00:00.000Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>搜索引擎快照，是指在访客在无法打开某个搜索结果，或者打开速度特别慢的情况下，为访客提供的之前保存在搜索引擎服务器上对应网页内容的纯文本。不过，搜索引擎保存的快照内容一般只包括文本数据，图片及其他多媒体等非文本数据不会被保存。因此，在来源网站无法访问的情况下，图片及其他多媒体在快照中将无法显示。</p><footer><strong>百度百科</strong><cite><a href="https://baike.baidu.com/item/快照/327038" target="_blank" rel="noopener">baike.baidu.com/item/快照/327038</a></cite></footer></blockquote><ol><li><p>百度</p><ol><li>登陆注册<a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源资源平台</a></li><li>进入用户中心-站点管理-添加网站</li><li>勾选网站属性</li><li>验证网站（下载验证文件<u><em>baidu_verify_<em>**</em>.html</em></u> 存放至域名根目录下 测试该文件是否可以访问,最后点击完成验证.）</li><li>验证之后点击该网站链接 可以看到所有网站关于搜索的情况</li><li>点击搜索展现-HTTPS认证（需要保证全站所有链接都支持HTTPS访问）</li><li>验证成功之后再次搜索就基本可以看到了（但是具体的文章还没弄好）</li></ol></li><li><p>谷歌</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>搜索引擎快照，是指在访客在无法打开某个搜索结果，或者打开速度特别慢的情况下，为访客提供的之前保存在搜索引擎服务器上对应网页内容的纯文本。不过，搜索引擎保存的快照内容一般只包括文本数据，图片及其他多媒体等非文本数据不会被保存。因此，在来源网站无法访问的情况下，图片及其他多媒体在快照中将无法显示。</p><footer><strong>百度百科</strong><cite><a href="https://baike.baidu.com/item/快照/327038" target="_blank" rel="noopener">baike.baidu.com/item/快照/327038</a></cite></footer></blockquote><ol><li><p>百度</p><ol><li>登陆注册<a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">百度搜索资源资源平台</a></li><li>进入用户中心-站点管理-添加网站</li><li>勾选网站属性</li><li>验证网站（下载验证文件<u><em>baidu_verify_<em>**</em>.html</em></u> 存放至域名根目录下 测试该文件是否可以访问,最后点击完成验证.）</li><li>验证之后点击该网站链接 可以看到所有网站关于搜索的情况</li><li>点击搜索展现-HTTPS认证（需要保证全站所有链接都支持HTTPS访问）</li><li>验证成功之后再次搜索就基本可以看到主页了（但是具体的文章内容什么时候可以搜到这个不太清楚）</li></ol></li><li><p>谷歌</p></li></ol>]]></content>
     
     <summary type="html">
     
@@ -106,6 +179,34 @@
 &lt;footer&gt;&lt;strong&gt;Robert C. Martin&lt;/strong&gt;&lt;cite&gt;敏捷软件开发：原则、模式和实践&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
 &lt;p&gt;&amp;emsp;&amp;emsp;所谓职责是指类变化的原因。如果一个类有多于一个的动机被改变，那么这个类就具有多于一个的职责。而单一职责原则就是指一个类或者模块应该有且只有一个改变的原因。(看看就行)&lt;/p&gt;
 &lt;p&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;如果一个类承担的职责过多，就等于把这些职责耦合在一起了。一个职责的变化可能会削弱或者抑制这个类完成其他职责的能力。这种耦合会导致脆弱的设计，当发生变化时，设计会遭受到意想不到的破坏。而如果想要避免这种现象的发生，就要尽可能的遵守单一职责原则。此原则的核心就是解耦和增强内聚性&lt;/strong&gt;。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="https://2egg.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="代码" scheme="https://2egg.github.io/tags/%E4%BB%A3%E7%A0%81/"/>
+    
+      <category term="设计模式" scheme="https://2egg.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="Java" scheme="https://2egg.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Open Close Principle - 开闭原则</title>
+    <link href="https://2egg.github.io/2019/04/24/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/"/>
+    <id>https://2egg.github.io/2019/04/24/开闭原则/</id>
+    <published>2019-04-24T01:11:30.000Z</published>
+    <updated>2019-05-09T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="开闭原则-——-OCP"><a href="#开闭原则-——-OCP" class="headerlink" title="开闭原则 —— OCP"></a>开闭原则 —— OCP</h3><blockquote><p>Software entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！)</p><footer><strong>Bertrand Meyer</strong><cite>Wide Awake</cite></footer></blockquote><p>模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//工厂(Factory) 有一条生产线(prodLine),生产"产品A".</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">prodLine</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"产品A"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//客户 订购该工厂的该产品(产品A)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我订购并收到产品："</span>+order());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">order</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line">        <span class="keyword">return</span> factory.prodLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行效果</span></span><br><span class="line">我订购并收到产品：产品A</span><br><span class="line"></span><br><span class="line"><span class="comment">/*现因为市场需求改变增加,需要新加一条生产"产品B"的生产线, 但是资金有限。</span></span><br><span class="line"><span class="comment">  只能再原有的生产线上增加功能(既可以生产A，又可以生产B)*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">prodLine</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(type == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"产品A"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"产品B"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*当我们修改之后 会发现客户方有问题（订购不了产品） 因为什么！ </span></span><br><span class="line"><span class="comment">因为我们需要知道客户到底要什么产品(type)，客户没说，我们也不能做啊，不然做出来退货怎么办(出BUG)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我订购并收到产品："</span>+order());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">order</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line"><span class="comment">//客户申明要什么产品</span></span><br><span class="line">        <span class="keyword">return</span> factory.prodLine(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">我订购并收到产品：产品A</span><br></pre></td></tr></table></figure></p><p>以上只是最基本的<br><figure class="highlight java"><figcaption><span>开闭原则</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//我们建厂之前需要提前写一个设计稿(接口)为未来做准备 比如 生产N种产品</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IFactory</span> </span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">prodLine</span><span class="params">(<span class="keyword">int</span> type)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//现在市场上 出现了需要产品的客户 我们直接按照接口 建造工厂</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FactoryA</span> <span class="keyword">implements</span> <span class="title">IFactory</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">prodLine</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(type == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"产品A"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"产品B"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//客户方  没有变化 申明产品的类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我订购并收到产品："</span>+order());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">order</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line"><span class="comment">//客户申明要什么产品</span></span><br><span class="line">        <span class="keyword">return</span> factory.prodLine(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">我订购并收到产品：产品A/B</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;开闭原则-——-OCP&quot;&gt;&lt;a href=&quot;#开闭原则-——-OCP&quot; class=&quot;headerlink&quot; title=&quot;开闭原则 —— OCP&quot;&gt;&lt;/a&gt;开闭原则 —— OCP&lt;/h3&gt;&lt;blockquote&gt;&lt;p&gt;Software entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！)&lt;/p&gt;
+&lt;footer&gt;&lt;strong&gt;Bertrand Meyer&lt;/strong&gt;&lt;cite&gt;Wide Awake&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
+&lt;p&gt;模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     

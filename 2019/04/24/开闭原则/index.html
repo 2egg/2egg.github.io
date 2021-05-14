@@ -7,25 +7,25 @@
     
 
     
-    <title>负载均衡 | 2egg</title>
+    <title>Open Close Principle - 开闭原则 | 2egg</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="代码,Java">
+    <meta name="keywords" content="代码,设计模式,Java">
     
-    <meta name="description" content="负载均衡​    多台服务器组成一台服务器集合，每台服务器都具有等价的地位， 可以单独提供服务且无需其他服务器的辅助，通过某种负载分担技术，将外部发送来的请求 均衡的分配到服务器集合中的每一台服务器上，而接受到请求的服务器独立的回应客户请求。">
-<meta name="keywords" content="代码,Java">
+    <meta name="description" content="开闭原则 —— OCPSoftware entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！) Bertrand MeyerWide Awake 模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。">
+<meta name="keywords" content="代码,设计模式,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="负载均衡">
-<meta property="og:url" content="https://2egg.github.io/2019/06/23/负载均衡/index.html">
+<meta property="og:title" content="Open Close Principle - 开闭原则">
+<meta property="og:url" content="https://2egg.github.io/2019/04/24/开闭原则/index.html">
 <meta property="og:site_name" content="2egg">
-<meta property="og:description" content="负载均衡​    多台服务器组成一台服务器集合，每台服务器都具有等价的地位， 可以单独提供服务且无需其他服务器的辅助，通过某种负载分担技术，将外部发送来的请求 均衡的分配到服务器集合中的每一台服务器上，而接受到请求的服务器独立的回应客户请求。">
+<meta property="og:description" content="开闭原则 —— OCPSoftware entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！) Bertrand MeyerWide Awake 模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://w.wallhaven.cc/full/0q/wallhaven-0qjdx5.png">
-<meta property="og:updated_time" content="2019-07-09T16:00:00.000Z">
+<meta property="og:updated_time" content="2019-05-09T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="负载均衡">
-<meta name="twitter:description" content="负载均衡​    多台服务器组成一台服务器集合，每台服务器都具有等价的地位， 可以单独提供服务且无需其他服务器的辅助，通过某种负载分担技术，将外部发送来的请求 均衡的分配到服务器集合中的每一台服务器上，而接受到请求的服务器独立的回应客户请求。">
+<meta name="twitter:title" content="Open Close Principle - 开闭原则">
+<meta name="twitter:description" content="开闭原则 —— OCPSoftware entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！) Bertrand MeyerWide Awake 模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。">
 <meta name="twitter:image" content="https://w.wallhaven.cc/full/0q/wallhaven-0qjdx5.png">
     
 
@@ -128,7 +128,7 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-负载均衡" class="article article-single article-type-post
+                            <article id="post-开闭原则" class="article article-single article-type-post
 " itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -136,7 +136,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        负载均衡
+        Open Close Principle - 开闭原则
         </h1>
     
 
@@ -147,16 +147,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2019/06/23/负载均衡/" class="article-date">
-       <time datetime="2019-06-23T03:20:35.000Z" itemprop="datePublished">2019-06-23</time>
+    <a href="/2019/04/24/开闭原则/" class="article-date">
+       <time datetime="2019-04-24T01:11:30.000Z" itemprop="datePublished">2019-04-24</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2019/06/23/负载均衡/" class="article-date">
-     <time datetime="2019-07-09T16:00:00.000Z" itemprop="dateModified">2019-07-10</time>
+  <a href="/2019/04/24/开闭原则/" class="article-date">
+     <time datetime="2019-05-09T16:00:00.000Z" itemprop="dateModified">2019-05-10</time>
   </a>
 </div>
 
@@ -166,7 +166,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/代码/">代码</a>
+        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/代码/">代码</a>, <a class="tag-link" href="/tags/设计模式/">设计模式</a>
     </div>
 
                 
@@ -187,37 +187,10 @@
 			
 			
 
-            <h5 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h5><p>​    多台服务器组成一台服务器集合，每台服务器都具有等价的地位， 可以单独提供服务且无需其他服务器的辅助，通过某种负载分担技术，将外部发送来的请求 均衡的分配到服务器集合中的每一台服务器上，而接受到请求的服务器独立的回应客户请求。 </p>
-<a id="more"></a>
-<p>​    负载均衡是高可用网络基础架构的一个关键组成部分， 有了负载均衡，我们通常可以将我们的应用服务器部署多个，然后通过负载均衡将用户的请求发送到不同的服务器来提高网站，应用，数据库或者其他服务的性能以及可靠性。</p>
-<p>​    正常情况下多个用户通过网络 访问单个服务器，数据库处理数据，如果出现服务器宕机的情况的话，在只有一个服务器的下，用户的请求就会得不到回应（单点故障问题），又或者N个用户在段时间内访问同一服务器，超过了服务器的处理能力，会产生响应速度慢 甚至无法连接到服务器的情况。</p>
-<h5 id="负载均衡方案"><a href="#负载均衡方案" class="headerlink" title="负载均衡方案"></a>负载均衡方案</h5><p>​    通过一个负载均衡器、至少两个web服务器、由 均衡器根据业务逻辑（比如：某个服务器通过运行状态检查服务检查此服务器已经宕机，将不分配用户请求给此服务器，直至检查服务器状态为”健康”在将用户请求发送给此服务器。）分配用户请求转发至某个服务器。</p>
-<h5 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ip列表</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ipMap</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> HashMap&lt;String, Integer&gt; serverWeightMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">        <span class="keyword">static</span> &#123;</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.100"</span>, <span class="number">1</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.101"</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 权重为4</span></span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.102"</span>, <span class="number">4</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.103"</span>, <span class="number">1</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.104"</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 权重为3</span></span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.105"</span>, <span class="number">3</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.106"</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 权重为2</span></span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.107"</span>, <span class="number">2</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.108"</span>, <span class="number">1</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.109"</span>, <span class="number">1</span>);</span><br><span class="line">            serverWeightMap.put(<span class="string">"192.168.1.110"</span>, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="随机"><a href="#随机" class="headerlink" title="随机"></a>随机</h6><p>向集合中添加负载地址 加权 添加单个负载地址个数  随机负载个数，循环转发请求到服务器上，次数足够多的的情况下，每个负载地址根据权重所接受的请求次数 与集合长度是成比例的。</p>
-<ul>
-<li>优点：使用简单</li>
-<li>缺点：不适合机器配置不同的场景</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">random</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 重建一个Map，避免服务器的上下线导致的并发问题</span></span><br><span class="line">       Map&lt;String, Integer&gt; serverMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">       serverMap.putAll(ipMap.serverWeightMap);</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 取得Ip地址List</span></span><br><span class="line">       Set&lt;String&gt; keySet = serverMap.keySet();</span><br><span class="line">       Iterator&lt;String&gt; iterator = keySet.iterator();</span><br><span class="line"></span><br><span class="line">       List&lt;String&gt; serverList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">       <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">           String server = iterator.next();</span><br><span class="line">           <span class="keyword">int</span> weight = serverMap.get(server);</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; weight; i++)</span><br><span class="line">               serverList.add(server);</span><br><span class="line">       &#125;</span><br><span class="line">       java.util.Random random = <span class="keyword">new</span> java.util.Random();</span><br><span class="line">       <span class="keyword">int</span> randomPos = random.nextInt(serverList.size());</span><br><span class="line">       <span class="keyword">return</span> serverList.get(randomPos);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h6 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h6><p>为第一个请求选择健康池中的第一个后端服务器，然后按顺序往后依次选择，直到最后一个，然后循环。</p>
-<ul>
-<li>优点：服务器请求数目相同</li>
-<li>缺点：服务器压力不一致，不合适服务器配置不同的情况；</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">pollingIp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 重建一个Map，避免服务器的上下线导致的并发问题</span></span><br><span class="line">        Map&lt;String, Integer&gt; serverMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">        serverMap.putAll(ipMap.serverWeightMap);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 取得Ip地址List</span></span><br><span class="line">        Set&lt;String&gt; keySet = serverMap.keySet();</span><br><span class="line">        Iterator&lt;String&gt; iterator = keySet.iterator();</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; serverList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">            String server = iterator.next();</span><br><span class="line">            <span class="keyword">int</span> weight = serverMap.get(server);</span><br><span class="line">            <span class="comment">/*循环获取map 中的key 的value 是多少 放入list中 */</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; weight; i++)</span><br><span class="line">                serverList.add(server);</span><br><span class="line">        &#125;</span><br><span class="line">        String server = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">synchronized</span> (pos) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pos &gt; keySet.size())</span><br><span class="line">                pos = <span class="number">0</span>;</span><br><span class="line">            server = serverList.get(pos);</span><br><span class="line">            pos ++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> server;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h6 id="最小连接"><a href="#最小连接" class="headerlink" title="最小连接"></a>最小连接</h6><p>最小连接数算法比较灵活和智能，由于后端服务器的配置不尽相同，对于请求的处理有 快有慢，它正是根据后端服务器当前的连接情况，动态地选取其中当前积压连接数最少的一台服务器来处理当前请求，尽可能地提高后端服务器的利用效率，将负载 合理地分流到每一台机器。由于最小连接数设计服务器连接数的汇总和感知，设计与实现较为繁琐。</p>
-<ul>
-<li>优点：根据服务器当前的情况处理请求，动态分配</li>
-<li>缺点：算法实现相对复杂，需要监控服务器请求连接数；</li>
-</ul>
-<h6 id="散列"><a href="#散列" class="headerlink" title="散列"></a>散列</h6><p>根据请求源的某一值(IP)的散列（hash）来选择要转发的服务器。这种方式可以一定程度上保证特定用户能连接到相同的服务器。如果你的应用需要处理状态而要求用户能连接到和之前相同的服务器，可以考虑采取这种方式。</p>
-<ul>
-<li>优点：将来自同一ip地址的请求，同一会话期内，转发到相同的服务器，直到后端服务器列表变更， 根据此特性 可以在服务先飞这与服务提供者之间建立有状态的session会话 实现会话粘贴。</li>
-<li>缺点：某一目标服务器宕机后，当前服务器会话消失，出现hash倾斜</li>
-</ul>
-<p>出现hash倾斜的解决方案：虚拟节点，在真实的服务器节点之间 添加 添加服务器节点映射(虚拟节点)。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">hash</span><span class="params">(String remoteIp)</span></span>&#123;</span><br><span class="line">       <span class="comment">// 重建一个Map，避免服务器的上下线导致的并发问题</span></span><br><span class="line">       Map&lt;String, Integer&gt; serverMap = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">       serverMap.putAll(ipMap.serverWeightMap);</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 取得Ip地址List</span></span><br><span class="line">       Set&lt;String&gt; keySet = serverMap.keySet();</span><br><span class="line">       ArrayList&lt;String&gt; keyList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">       keyList.addAll(keySet);</span><br><span class="line"></span><br><span class="line">       <span class="comment">// 在Web应用中可通过HttpServlet的getRemoteIp方法获取</span></span><br><span class="line">       <span class="comment">//String remoteIp = "127.0.0.1";</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> hashCode = remoteIp.hashCode();</span><br><span class="line">       <span class="keyword">int</span> serverListSize = keyList.size();</span><br><span class="line">       <span class="keyword">int</span> serverPos = hashCode % serverListSize;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> keyList.get(serverPos);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h5 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h5><p>实际项目中的话肯定是多个均衡算法糅合在一起实现。</p>
+            <h3 id="开闭原则-——-OCP"><a href="#开闭原则-——-OCP" class="headerlink" title="开闭原则 —— OCP"></a>开闭原则 —— OCP</h3><blockquote><p>Software entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！)</p>
+<footer><strong>Bertrand Meyer</strong><cite>Wide Awake</cite></footer></blockquote>
+<p>模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//工厂(Factory) 有一条生产线(prodLine),生产"产品A".</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">prodLine</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"产品A"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//客户 订购该工厂的该产品(产品A)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我订购并收到产品："</span>+order());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">order</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line">        <span class="keyword">return</span> factory.prodLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行效果</span></span><br><span class="line">我订购并收到产品：产品A</span><br><span class="line"></span><br><span class="line"><span class="comment">/*现因为市场需求改变增加,需要新加一条生产"产品B"的生产线, 但是资金有限。</span></span><br><span class="line"><span class="comment">  只能再原有的生产线上增加功能(既可以生产A，又可以生产B)*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">prodLine</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(type == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"产品A"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"产品B"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*当我们修改之后 会发现客户方有问题（订购不了产品） 因为什么！ </span></span><br><span class="line"><span class="comment">因为我们需要知道客户到底要什么产品(type)，客户没说，我们也不能做啊，不然做出来退货怎么办(出BUG)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我订购并收到产品："</span>+order());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">order</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line">		<span class="comment">//客户申明要什么产品</span></span><br><span class="line">        <span class="keyword">return</span> factory.prodLine(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">我订购并收到产品：产品A</span><br></pre></td></tr></table></figure></p>
+<p>以上只是最基本的<br><figure class="highlight java"><figcaption><span>开闭原则</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//我们建厂之前需要提前写一个设计稿(接口)为未来做准备 比如 生产N种产品</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IFactory</span> </span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">prodLine</span><span class="params">(<span class="keyword">int</span> type)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//现在市场上 出现了需要产品的客户 我们直接按照接口 建造工厂</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FactoryA</span> <span class="keyword">implements</span> <span class="title">IFactory</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">prodLine</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(type == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"产品A"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"产品B"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//客户方  没有变化 申明产品的类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我订购并收到产品："</span>+order());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">order</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Factory factory = <span class="keyword">new</span> Factory();</span><br><span class="line">		<span class="comment">//客户申明要什么产品</span></span><br><span class="line">        <span class="keyword">return</span> factory.prodLine(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">我订购并收到产品：产品A/B</span><br></pre></td></tr></table></figure></p>
 
         </div>
         <footer class="article-footer">
@@ -225,7 +198,7 @@
 
 
 
-    <a data-url="https://2egg.github.io/2019/06/23/负载均衡/" data-id="ckonsx4as000koksulzs3khrl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://2egg.github.io/2019/04/24/开闭原则/" data-id="ckonsx4ak000aoksu69942ohf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -295,16 +268,18 @@
             "@type": "Person",
             "name": "HLJ"
         },
-        "headline": "负载均衡",
+        "headline": "Open Close Principle - 开闭原则",
         "image": "https://2egg.github.iohttps://w.wallhaven.cc/full/0q/wallhaven-0qjdx5.png",
-        "keywords": "代码 Java",
+        "keywords": "代码 设计模式 Java",
         "genre": "学习",
-        "datePublished": "2019-06-23",
-        "dateCreated": "2019-06-23",
-        "dateModified": "2019-07-10",
-        "url": "https://2egg.github.io/2019/06/23/负载均衡/",
-        "description": "负载均衡​    多台服务器组成一台服务器集合，每台服务器都具有等价的地位， 可以单独提供服务且无需其他服务器的辅助，通过某种负载分担技术，将外部发送来的请求 均衡的分配到服务器集合中的每一台服务器上，而接受到请求的服务器独立的回应客户请求。 ",
-        "wordCount": 1147
+        "datePublished": "2019-04-24",
+        "dateCreated": "2019-04-24",
+        "dateModified": "2019-05-10",
+        "url": "https://2egg.github.io/2019/04/24/开闭原则/",
+        "description": "开闭原则 —— OCPSoftware entities should be open for extension,but closed for modification(模块应对扩展开放,而对修改关闭！)
+Bertrand MeyerWide Awake
+模块应尽量在不修改原（是“原”，指原来的代码）代码的情况下进行扩展。",
+        "wordCount": 664
     }
 </script>
 
@@ -359,20 +334,20 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/07/30/网站搜索引擎收录/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/04/26/单一职责院子/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            网站搜索引擎收录
+            Single responsibility principle - 单一职责原则
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2019/05/05/里氏代换原则/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/04/23/设计模式/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">Liskov Substitution Principle - 里氏代换原则</p>
+        <p class="article-nav-title">Design Patterns of Java - 设计原则JAVA</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -601,7 +576,7 @@
     var gitalk = new Gitalk({
         clientID: '1a6e51c85546cc666cfc',
         clientSecret: 'e4cd53709f0ef661f93d48bbbed864f08f0fb9d4',
-        id: '91015437723907a32acf3061fb8da364',
+        id: 'e5eabd74d6dbd943767bb7cd773f72bb',
         repo: '2egg.github.io',
         owner: '2egg',
         admin: "2egg"
