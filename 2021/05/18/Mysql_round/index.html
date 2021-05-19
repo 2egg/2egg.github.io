@@ -7,22 +7,26 @@
     
 
     
-    <title>2egg</title>
+    <title>Mysql round函数四舍五入不正确 | 2egg</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="R3p8DI8eOT">
-<meta name="keywords" content="2egg的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="2egg">
-<meta property="og:url" content="https://2egg.github.io/baidu_verify_R3p8DI8eOT.html">
+    <meta name="keywords" content="Mysql">
+    
+    <meta name="description" content="最近发现Mysql中round()函数 取整方式会因参数的类型会有所不同，例如参数类型为整数或Decimal时，该函数会按照四舍五入规则正确取整。但是参数类型为Double时,会与正常四舍五入后的值不同。 差异12345select	2.5,	25E-1,	round(2.5),	round(25E-1) 结果为    2.5 25E-1 round(2.5) round(25E-1)     2">
+<meta name="keywords" content="Mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql round函数四舍五入不正确">
+<meta property="og:url" content="https://2egg.github.io/2021/05/18/Mysql_round/index.html">
 <meta property="og:site_name" content="2egg">
-<meta property="og:description" content="R3p8DI8eOT">
+<meta property="og:description" content="最近发现Mysql中round()函数 取整方式会因参数的类型会有所不同，例如参数类型为整数或Decimal时，该函数会按照四舍五入规则正确取整。但是参数类型为Double时,会与正常四舍五入后的值不同。 差异12345select	2.5,	25E-1,	round(2.5),	round(25E-1) 结果为    2.5 25E-1 round(2.5) round(25E-1)     2">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T04:57:37.057Z">
+<meta property="og:image" content="https://2egg.github.io/2021/05/18/Mysql_round/mysql_round.png">
+<meta property="og:updated_time" content="2021-05-19T03:04:34.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2egg">
-<meta name="twitter:description" content="R3p8DI8eOT">
+<meta name="twitter:title" content="Mysql round函数四舍五入不正确">
+<meta name="twitter:description" content="最近发现Mysql中round()函数 取整方式会因参数的类型会有所不同，例如参数类型为整数或Decimal时，该函数会按照四舍五入规则正确取整。但是参数类型为Double时,会与正常四舍五入后的值不同。 差异12345select	2.5,	25E-1,	round(2.5),	round(25E-1) 结果为    2.5 25E-1 round(2.5) round(25E-1)     2">
+<meta name="twitter:image" content="https://2egg.github.io/2021/05/18/Mysql_round/mysql_round.png">
     
 
     
@@ -119,15 +123,57 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    2egg
+    <a class="page-title-link" href="/categories/学习/">学习</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="page-" class="article article-single article-type-page
+                            <article id="post-Mysql_round" class="article article-single article-type-post
 " itemscope itemprop="blogPost">
     <div class="article-inner">
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Mysql round函数四舍五入不正确
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/05/18/Mysql_round/" class="article-date">
+       <time datetime="2021-05-18T01:01:21.000Z" itemprop="datePublished">2021-05-18</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/05/18/Mysql_round/" class="article-date">
+     <time datetime="2021-05-19T03:04:34.507Z" itemprop="dateModified">2021-05-19</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Mysql/">Mysql</a>
+    </div>
+
+                
+
+                
+
+            </div>
         
         
 
@@ -141,14 +187,43 @@
 			
 			
 
-            R3p8DI8eOT
+            <p>最近发现<strong>Mysql</strong>中<code>round()</code>函数 <strong>取整方式会因参数的类型会有所不同</strong>，例如参数类型为<strong>整数</strong>或<strong>Decimal</strong>时，该函数会按照四舍五入规则正确取整。但是参数类型为<strong>Double</strong>时,会与正常四舍五入后的值不同。</p>
+<h5 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">	2.5,</span><br><span class="line">	25E-1,</span><br><span class="line">	round(2.5),</span><br><span class="line">	round(25E-1)</span><br></pre></td></tr></table></figure>
+<p>结果为</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">2.5</th>
+<th style="text-align:center">25E-1</th>
+<th style="text-align:center">round(2.5)</th>
+<th style="text-align:center">round(25E-1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2.5</td>
+<td style="text-align:center">2.5</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2.0</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/2021/05/18/Mysql_round/mysql_round.png" alt="图标"></p>
+<p>​    <u>E：科学计数法（<strong>aEb = a×10^b</strong>）</u></p>
+<h5 id="mysql-文档解释"><a href="#mysql-文档解释" class="headerlink" title="mysql 文档解释"></a>mysql 文档解释</h5><p>该<code>round()</code>函数根据其参数是精确的还是近似的取整方式不同：</p>
+<ul>
+<li>对于精确值数字，请 <code>round()</code>使用“四舍五入”规则：如果分数为0.5或更大的分数，则将其四舍五入到下一个整数（如果为正数）或四舍五入到下一个整数（如果为负数）。（换句话说，四舍五入为零。）小数部分小于.5的值如果为正则四舍五入到下一个整数，如果为负则四舍五入到下一个整数。（换句话说，它四舍五入为零。）</li>
+<li>对于近似值数字，结果取决于C库。在许多系统上，这意味着 <code>round()</code>使用“四舍五入到最接近的偶数”规则：<strong>小数部分位于两个整数中间的一半的值将四舍五入到最接近的偶数整数</strong>。</li>
+</ul>
+<h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>如四舍五入之后不正确 round之前检查该参数类型如为double 就是参数类型不正确的缘故。，工作中如涉及到小数精确尽量使用decimal 具体小数精度需参照实际情况设定</p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://2egg.github.io/baidu_verify_R3p8DI8eOT.html" data-id="ckouvtnag0000l0sukbglt5rj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://2egg.github.io/2021/05/18/Mysql_round/" data-id="ckouvtnbv0007l0sueggbbf9l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -218,16 +293,30 @@
             "@type": "Person",
             "name": "HLJ"
         },
-        
-        "image": "https://2egg.github.io",
-        
-        
-        "datePublished": "2021-05-07",
-        "dateCreated": "2021-05-07",
-        "dateModified": "2019-07-31",
-        "url": "https://2egg.github.io/baidu_verify_R3p8DI8eOT.html",
-        "description": "R3p8DI8eOT",
-        "wordCount": 1
+        "headline": "Mysql round函数四舍五入不正确",
+        "image": "https://2egg.github.io/2021/05/18/Mysql_round/mysql_round.png",
+        "keywords": "Mysql",
+        "genre": "学习",
+        "datePublished": "2021-05-18",
+        "dateCreated": "2021-05-18",
+        "dateModified": "2021-05-19",
+        "url": "https://2egg.github.io/2021/05/18/Mysql_round/",
+        "description": "最近发现Mysql中round()函数 取整方式会因参数的类型会有所不同，例如参数类型为整数或Decimal时，该函数会按照四舍五入规则正确取整。但是参数类型为Double时,会与正常四舍五入后的值不同。
+差异12345select	2.5,	25E-1,	round(2.5),	round(25E-1)
+结果为
+
+
+
+2.5
+25E-1
+round(2.5)
+round(25E-1)
+
+
+
+
+2",
+        "wordCount": 51
     }
 </script>
 
@@ -278,6 +367,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2021/05/14/更新显卡出错/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">更新显卡驱动出错</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -501,7 +603,7 @@
     var gitalk = new Gitalk({
         clientID: '1a6e51c85546cc666cfc',
         clientSecret: 'e4cd53709f0ef661f93d48bbbed864f08f0fb9d4',
-        id: '58d9f7b62f28794fb3786dc796fb2efc',
+        id: '2635575d7e1ef263a8bd5794c65d6e07',
         repo: '2egg.github.io',
         owner: '2egg',
         admin: "2egg"

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[更新显卡出错]]></title>
+    <title><![CDATA[Mysql round函数四舍五入不正确]]></title>
+    <url>%2F2021%2F05%2F18%2FMysql_round%2F</url>
+    <content type="text"><![CDATA[最近发现Mysql中round()函数 取整方式会因参数的类型会有所不同，例如参数类型为整数或Decimal时，该函数会按照四舍五入规则正确取整。但是参数类型为Double时,会与正常四舍五入后的值不同。 差异12345select 2.5, 25E-1, round(2.5), round(25E-1) 结果为 2.5 25E-1 round(2.5) round(25E-1) 2.5 2.5 3 2.0 ​ E：科学计数法（aEb = a×10^b） mysql 文档解释该round()函数根据其参数是精确的还是近似的取整方式不同： 对于精确值数字，请 round()使用“四舍五入”规则：如果分数为0.5或更大的分数，则将其四舍五入到下一个整数（如果为正数）或四舍五入到下一个整数（如果为负数）。（换句话说，四舍五入为零。）小数部分小于.5的值如果为正则四舍五入到下一个整数，如果为负则四舍五入到下一个整数。（换句话说，它四舍五入为零。） 对于近似值数字，结果取决于C库。在许多系统上，这意味着 round()使用“四舍五入到最接近的偶数”规则：小数部分位于两个整数中间的一半的值将四舍五入到最接近的偶数整数。 结论如四舍五入之后不正确 round之前检查该参数类型如为double 就是参数类型不正确的缘故。，工作中如涉及到小数精确尽量使用decimal 具体小数精度需参照实际情况设定]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[更新显卡驱动出错]]></title>
     <url>%2F2021%2F05%2F14%2F%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E5%87%BA%E9%94%99%2F</url>
     <content type="text"><![CDATA[更新显卡出错，提示缺少SHA-2更新补丁 需要安装两个更新补丁. 下载地址： kb4474419 kb4490628 根据系统选择下载好驱动版本之后，windows 7 系统如果直接安装，可能出现提示框 安装程序遇到错误：0x80240037 解决方案： 补丁文件复制一份（避免出错再次下载）. 更改复制后的补丁文件后缀名（.msu 改为.cab） 解压该文件至新文件夹中(kb4474419) 点击开始菜单 搜索 cmd.exe ,右键以管理员身份运行 输入该命令后修改命令中的路径运行 1234Microsoft Windows [版本 6.1.7601]版权所有 (c) 2009 Microsoft Corporation。保留所有权利。C:\windows\system32&gt;dism /online /add-package /packagepath:"C:\test\kb4474419\Windows6.1-KB4474419-v3-x64.cab" 6.等待安装完成，另外一个补丁同上操作 补丁安装完成之后就可以继续更新显卡了]]></content>
       <categories>

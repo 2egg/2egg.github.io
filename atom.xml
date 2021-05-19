@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://2egg.github.io/"/>
-  <updated>2021-05-13T16:00:00.000Z</updated>
+  <updated>2021-05-19T03:04:34.507Z</updated>
   <id>https://2egg.github.io/</id>
   
   <author>
@@ -17,7 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>更新显卡出错</title>
+    <title>Mysql round函数四舍五入不正确</title>
+    <link href="https://2egg.github.io/2021/05/18/Mysql_round/"/>
+    <id>https://2egg.github.io/2021/05/18/Mysql_round/</id>
+    <published>2021-05-18T01:01:21.000Z</published>
+    <updated>2021-05-19T03:04:34.507Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近发现<strong>Mysql</strong>中<code>round()</code>函数 <strong>取整方式会因参数的类型会有所不同</strong>，例如参数类型为<strong>整数</strong>或<strong>Decimal</strong>时，该函数会按照四舍五入规则正确取整。但是参数类型为<strong>Double</strong>时,会与正常四舍五入后的值不同。</p><h5 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line">2.5,</span><br><span class="line">25E-1,</span><br><span class="line">round(2.5),</span><br><span class="line">round(25E-1)</span><br></pre></td></tr></table></figure><p>结果为</p><table><thead><tr><th style="text-align:center">2.5</th><th style="text-align:center">25E-1</th><th style="text-align:center">round(2.5)</th><th style="text-align:center">round(25E-1)</th></tr></thead><tbody><tr><td style="text-align:center">2.5</td><td style="text-align:center">2.5</td><td style="text-align:center">3</td><td style="text-align:center">2.0</td></tr></tbody></table><p><img src="/2021/05/18/Mysql_round/mysql_round.png" alt="图标"></p><p>​    <u>E：科学计数法（<strong>aEb = a×10^b</strong>）</u></p><h5 id="mysql-文档解释"><a href="#mysql-文档解释" class="headerlink" title="mysql 文档解释"></a>mysql 文档解释</h5><p>该<code>round()</code>函数根据其参数是精确的还是近似的取整方式不同：</p><ul><li>对于精确值数字，请 <code>round()</code>使用“四舍五入”规则：如果分数为0.5或更大的分数，则将其四舍五入到下一个整数（如果为正数）或四舍五入到下一个整数（如果为负数）。（换句话说，四舍五入为零。）小数部分小于.5的值如果为正则四舍五入到下一个整数，如果为负则四舍五入到下一个整数。（换句话说，它四舍五入为零。）</li><li>对于近似值数字，结果取决于C库。在许多系统上，这意味着 <code>round()</code>使用“四舍五入到最接近的偶数”规则：<strong>小数部分位于两个整数中间的一半的值将四舍五入到最接近的偶数整数</strong>。</li></ul><h5 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h5><p>如四舍五入之后不正确 round之前检查该参数类型如为double 就是参数类型不正确的缘故。，工作中如涉及到小数精确尽量使用decimal 具体小数精度需参照实际情况设定</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近发现&lt;strong&gt;Mysql&lt;/strong&gt;中&lt;code&gt;round()&lt;/code&gt;函数 &lt;strong&gt;取整方式会因参数的类型会有所不同&lt;/strong&gt;，例如参数类型为&lt;strong&gt;整数&lt;/strong&gt;或&lt;strong&gt;Decimal&lt;/strong&gt;时，
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="https://2egg.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Mysql" scheme="https://2egg.github.io/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>更新显卡驱动出错</title>
     <link href="https://2egg.github.io/2021/05/14/%E6%9B%B4%E6%96%B0%E6%98%BE%E5%8D%A1%E5%87%BA%E9%94%99/"/>
     <id>https://2egg.github.io/2021/05/14/更新显卡出错/</id>
     <published>2021-05-14T02:57:59.000Z</published>
